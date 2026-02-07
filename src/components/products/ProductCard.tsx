@@ -3,7 +3,6 @@
 import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Tilt from "react-parallax-tilt";
 import { ArrowRight, Package } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -58,15 +57,7 @@ export function ProductCard({ product }: ProductCardProps) {
   }, []);
 
   return (
-    <Tilt
-      glareEnable={true}
-      glareMaxOpacity={0.3}
-      glareColor="#C5943A"
-      glarePosition="all"
-      scale={1.02}
-      tiltMaxAngleX={10}
-      tiltMaxAngleY={10}
-      transitionSpeed={300}
+    <div
       className={cn(
         product.gridSpan === "wide" && "sm:col-span-2",
         product.gridSpan === "tall" && "row-span-2"
@@ -108,7 +99,7 @@ export function ProductCard({ product }: ProductCardProps) {
               alt={`${product.name} - ${index + 1}`}
               fill
               className={cn(
-                "object-contain p-3 drop-shadow-lg transition-opacity duration-300 group-hover:scale-110",
+                "object-contain p-3 transition-opacity duration-300",
                 index === currentImageIndex ? "opacity-100" : "opacity-0"
               )}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -150,6 +141,6 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
       </Link>
-    </Tilt>
+    </div>
   );
 }
