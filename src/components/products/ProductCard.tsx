@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Tilt from "react-parallax-tilt";
@@ -15,6 +16,9 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const { t } = useLanguage();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
+  const imageAreaRef = useRef<HTMLDivElement>(null);
 
   const getCategoryName = (categoryId: string) => {
     const key = categoryId as keyof typeof t.categories;
@@ -27,6 +31,31 @@ export function ProductCard({ product }: ProductCardProps) {
   };
 
   const slug = product.slug || product.id;
+
+  const handleMouseMove = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if (product.images.length <= 1 || !imageAreaRef.current) return;
+
+      const rect = imageAreaRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const percentage = x / rect.width;
+      const index = Math.min(
+        Math.floor(percentage * product.images.length),
+        product.images.length - 1
+      );
+      setCurrentImageIndex(index);
+    },
+    [product.images.length]
+  );
+
+  const handleMouseLeave = useCallback(() => {
+    setIsHovering(false);
+    setCurrentImageIndex(0);
+  }, []);
+
+  const handleMouseEnter = useCallback(() => {
+    setIsHovering(true);
+  }, []);
 
   return (
     <Tilt
@@ -47,15 +76,45 @@ export function ProductCard({ product }: ProductCardProps) {
         href={`/urunler/${slug}`}
         className="group relative block h-full overflow-hidden rounded-2xl bg-card border border-border/50 hover:border-accent/30 transition-all duration-300"
       >
-        {/* Image area */}
-        <div className="relative aspect-[3/2] bg-gradient-to-b from-background to-muted/30 overflow-hidden rounded-t-2xl">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            className="object-contain p-3 drop-shadow-lg transition-transform duration-300 group-hover:scale-110"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          />
+        {/* Image area - mouse position determines which image */}
+        <div
+          ref={imageAreaRef}
+          className="relative aspect-[3/2] bg-gradient-to-b from-background to-muted/30 overflow-hidden rounded-t-2xl"
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          {/* Zone indicators on top (thin bars showing which zone is active) */}
+          {product.images.length > 1 && isHovering && (
+            <div className="absolute top-0 left-0 right-0 z-10 flex gap-1 px-3 pt-2">
+              {product.images.map((_, index) => (
+                <div
+                  key={index}
+                  className={cn(
+                    "h-0.5 flex-1 rounded-full transition-all duration-200",
+                    index === currentImageIndex
+                      ? "bg-accent"
+                      : "bg-foreground/20"
+                  )}
+                />
+              ))}
+            </div>
+          )}
+
+          {product.images.map((img, index) => (
+            <Image
+              key={index}
+              src={img}
+              alt={`${product.name} - ${index + 1}`}
+              fill
+              className={cn(
+                "object-contain p-3 drop-shadow-lg transition-opacity duration-300 group-hover:scale-110",
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              )}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            />
+          ))}
+
           <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-lg">
               <ArrowRight className="h-4 w-4" />

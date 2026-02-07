@@ -22,7 +22,7 @@ export function generateProductSchema(product: Product) {
     "@type": "Product",
     name: product.name,
     description: product.description,
-    image: `https://www.benfel.com.tr${product.image}`,
+    image: `https://www.benfel.com.tr${product.images[0]}`,
     brand: {
       "@type": "Brand",
       name: "Benfel",

@@ -1,215 +1,248 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Container } from "@/components/layout/Container";
-import { siteData } from "@/lib/siteData";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import { useLanguage } from "@/context/LanguageContext";
 import { fadeUp, staggerContainer } from "@/lib/animations";
 
+interface BannerSlide {
+  id: string;
+  image: string;
+  gradientFrom: string;
+  gradientTo: string;
+  titleKey: "bacano" | "regosto" | "trilex" | "star";
+}
+
+const bannerSlides: BannerSlide[] = [
+  {
+    id: "bacano",
+    image: "/images/products/bacano-classic.png",
+    gradientFrom: "from-[#3C1518]",
+    gradientTo: "to-[#5a2024]",
+    titleKey: "bacano",
+  },
+  {
+    id: "regosto",
+    image: "/images/products/regosto-classic.png",
+    gradientFrom: "from-[#2a1a0e]",
+    gradientTo: "to-[#4a2e18]",
+    titleKey: "regosto",
+  },
+  {
+    id: "trilex",
+    image: "/images/products/trilex-vanilla.png",
+    gradientFrom: "from-[#1a2a1e]",
+    gradientTo: "to-[#2e4a32]",
+    titleKey: "trilex",
+  },
+  {
+    id: "star",
+    image: "/images/products/star-bear.png",
+    gradientFrom: "from-[#1a1a2e]",
+    gradientTo: "to-[#2e2e4a]",
+    titleKey: "star",
+  },
+];
+
 export function HeroSection() {
   const { t } = useLanguage();
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  const heroSlides = [
-    {
-      image: "/images/products/bacano-classic.png",
-      title: "Bacano",
-      subtitleKey: "bacano" as const,
-    },
-    {
-      image: "/images/products/regosto-classic.png",
-      title: "Regosto",
-      subtitleKey: "regosto" as const,
-    },
-    {
-      image: "/images/products/trilex-vanilla.png",
-      title: "Trilex",
-      subtitleKey: "trilex" as const,
-    },
-    {
-      image: "/images/products/star-bear.png",
-      title: "Star",
-      subtitleKey: "star" as const,
-    },
-  ];
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const autoplayRef = useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true })
+  );
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 4000);
-    return () => clearInterval(timer);
+    if (!api) return;
+
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  const restartAutoplay = useCallback(() => {
+    const timer = setTimeout(() => {
+      autoplayRef.current.play();
+    }, 3000);
+    return () => clearTimeout(timer);
   }, []);
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  const scrollPrev = useCallback(() => {
+    api?.scrollPrev();
+    restartAutoplay();
+  }, [api, restartAutoplay]);
+
+  const scrollNext = useCallback(() => {
+    api?.scrollNext();
+    restartAutoplay();
+  }, [api, restartAutoplay]);
+
+  const scrollTo = useCallback((index: number) => {
+    api?.scrollTo(index);
+    restartAutoplay();
+  }, [api, restartAutoplay]);
 
   return (
-    <section className="relative flex min-h-screen items-center bg-primary overflow-hidden">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--accent)_0%,_transparent_50%)] opacity-10" />
+    <section className="relative w-full">
+      <Carousel
+        setApi={setApi}
+        opts={{ loop: true, align: "start" }}
+        plugins={[autoplayRef.current]}
+        className="w-full"
+      >
+        <CarouselContent className="-ml-0">
+          {bannerSlides.map((slide, index) => (
+            <CarouselItem key={slide.id} className="pl-0">
+              <div
+                className={`relative flex min-h-screen items-center bg-gradient-to-br ${slide.gradientFrom} ${slide.gradientTo} overflow-hidden`}
+              >
+                {/* Background decorative elements */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--accent)_0%,_transparent_50%)] opacity-10" />
+                <div className="absolute top-1/4 right-0 w-96 h-96 rounded-full bg-accent/5 blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-white/5 blur-3xl" />
 
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 right-0 w-96 h-96 rounded-full bg-accent/5 blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-primary-light/20 blur-3xl" />
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
+                  <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Left - Text Content */}
+                    {index === current && (
+                      <motion.div
+                        variants={staggerContainer}
+                        initial="hidden"
+                        animate="visible"
+                        key={`text-${slide.id}-${current}`}
+                      >
+                        <motion.span
+                          variants={fadeUp}
+                          className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-[#C5943A]"
+                        >
+                          {t.hero.tagline}
+                        </motion.span>
 
-      <Container className="relative z-10 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left - Text Content */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.span
-              variants={fadeUp}
-              className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-accent"
-            >
-              {t.hero.tagline}
-            </motion.span>
+                        <motion.h1
+                          variants={fadeUp}
+                          className="font-serif text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+                        >
+                          {t.hero.heading}
+                        </motion.h1>
 
-            <motion.h1
-              variants={fadeUp}
-              className="font-serif text-4xl font-bold leading-tight text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl"
-            >
-              {t.hero.heading}
-            </motion.h1>
+                        <motion.p
+                          variants={fadeUp}
+                          className="mt-6 max-w-xl text-lg leading-relaxed text-white/70 sm:text-xl"
+                        >
+                          {t.brands[slide.titleKey]}
+                        </motion.p>
 
-            <motion.p
-              variants={fadeUp}
-              className="mt-6 max-w-xl text-lg leading-relaxed text-primary-foreground/70 sm:text-xl"
-            >
-              {t.hero.subheading}
-            </motion.p>
+                        <motion.div
+                          variants={fadeUp}
+                          className="mt-10 flex flex-col gap-4 sm:flex-row"
+                        >
+                          <Link href="/urunler">
+                            <Button
+                              size="lg"
+                              className="bg-[#C5943A] hover:bg-[#d4a34a] text-white font-semibold text-base px-8 py-6 group"
+                            >
+                              {t.hero.primaryCta}
+                              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                            </Button>
+                          </Link>
+                          <Link href="/iletisim">
+                            <Button
+                              size="lg"
+                              variant="outline"
+                              className="border-white/30 text-white hover:bg-white/10 font-semibold text-base px-8 py-6"
+                            >
+                              {t.hero.secondaryCta}
+                            </Button>
+                          </Link>
+                        </motion.div>
+                      </motion.div>
+                    )}
 
-            <motion.div
-              variants={fadeUp}
-              className="mt-10 flex flex-col gap-4 sm:flex-row"
-            >
-              <Link href="/urunler">
-                <Button
-                  size="lg"
-                  className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold text-base px-8 py-6 group"
-                >
-                  {t.hero.primaryCta}
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </Link>
-              <Link href="/iletisim">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold text-base px-8 py-6"
-                >
-                  {t.hero.secondaryCta}
-                </Button>
-              </Link>
-            </motion.div>
-          </motion.div>
-
-          {/* Right - Product Slider */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="relative hidden lg:block"
-          >
-            <div className="relative h-[500px] w-full">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                  animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                  exit={{ opacity: 0, scale: 0.8, rotate: 5 }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <div className="relative h-80 w-80">
-                    <Image
-                      src={heroSlides[currentSlide].image}
-                      alt={heroSlides[currentSlide].title}
-                      fill
-                      className="object-contain drop-shadow-2xl"
-                      priority
-                    />
+                    {/* Right - Product Image */}
+                    <div className="relative hidden lg:flex items-center justify-center">
+                      {index === current && (
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.8, y: 30 }}
+                          animate={{ opacity: 1, scale: 1, y: 0 }}
+                          transition={{ delay: 0.3, duration: 0.7 }}
+                          className="relative h-[450px] w-[450px]"
+                        >
+                          <Image
+                            src={slide.image}
+                            alt={slide.titleKey}
+                            fill
+                            className="object-contain drop-shadow-2xl"
+                            priority={index === 0}
+                          />
+                        </motion.div>
+                      )}
+                    </div>
                   </div>
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Slide Info */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-center">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentSlide}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                  >
-                    <h3 className="font-serif text-2xl font-bold text-accent">
-                      {heroSlides[currentSlide].title}
-                    </h3>
-                    <p className="text-primary-foreground/60">
-                      {t.brands[heroSlides[currentSlide].subtitleKey]}
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
+                </div>
               </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
 
-              {/* Navigation Arrows */}
-              <button
-                onClick={prevSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 p-2 text-primary-foreground/50 hover:text-accent transition-colors"
-              >
-                <ChevronLeft className="h-8 w-8" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-primary-foreground/50 hover:text-accent transition-colors"
-              >
-                <ChevronRight className="h-8 w-8" />
-              </button>
+        {/* Custom Navigation Arrows */}
+        <button
+          onClick={scrollPrev}
+          className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </button>
+        <button
+          onClick={scrollNext}
+          className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </button>
 
-              {/* Dots */}
-              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-                {heroSlides.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`h-2 rounded-full transition-all ${
-                      index === currentSlide
-                        ? "w-8 bg-accent"
-                        : "w-2 bg-primary-foreground/30 hover:bg-primary-foreground/50"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </motion.div>
+        {/* Pagination Dots */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+          {bannerSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollTo(index)}
+              className={`h-2.5 rounded-full transition-all duration-300 ${
+                index === current
+                  ? "w-10 bg-[#C5943A]"
+                  : "w-2.5 bg-white/40 hover:bg-white/60"
+              }`}
+            />
+          ))}
         </div>
-      </Container>
+      </Carousel>
 
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20"
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="text-xs text-primary-foreground/40 uppercase tracking-widest">
+          <span className="text-xs text-white/40 uppercase tracking-widest">
             {t.hero.discover}
           </span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="h-10 w-6 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-1.5"
+            className="h-10 w-6 rounded-full border-2 border-white/30 flex items-start justify-center p-1.5"
           >
-            <div className="h-2 w-1 rounded-full bg-accent" />
+            <div className="h-2 w-1 rounded-full bg-[#C5943A]" />
           </motion.div>
         </div>
       </motion.div>

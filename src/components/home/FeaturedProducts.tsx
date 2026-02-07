@@ -63,7 +63,7 @@ export function FeaturedProducts() {
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent z-10" />
                   <div className="relative h-full w-full bg-gradient-to-b from-background to-muted/50">
                     <Image
-                      src={product.image}
+                      src={product.images[0]}
                       alt={product.name}
                       fill
                       className="object-contain p-8 drop-shadow-xl transition-transform duration-300 group-hover:scale-110"

@@ -39,7 +39,7 @@ export function Header() {
     >
       <Container>
         <div className="flex h-16 items-center justify-between lg:h-20">
-          <Logo />
+          <Logo variant="light" />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">

@@ -6,15 +6,19 @@ interface LogoProps {
   className?: string;
 }
 
-export function Logo({ variant = "light", className = "" }: LogoProps) {
+export function Logo({ variant = "dark", className = "" }: LogoProps) {
+  const logoSrc = variant === "light"
+    ? "/images/benfel-logo-white.png"
+    : "/images/benfel-logo.png";
+
   return (
     <Link href="/" className={`flex items-center gap-3 ${className}`}>
       <Image
-        src="/images/benfel-logo.png"
+        src={logoSrc}
         alt="Benfel"
         width={50}
         height={39}
-        className="object-contain"
+        className={`object-contain ${variant === "dark" ? "brightness-0" : ""}`}
         priority
       />
       <span className={`font-serif text-xl font-bold tracking-tight ${

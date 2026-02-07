@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Package, Boxes, Weight } from "lucide-react";
@@ -7,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
+import { cn } from "@/lib/utils";
 import type { Product } from "@/lib/types";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -16,6 +18,7 @@ interface ProductDetailProps {
 
 export function ProductDetail({ product }: ProductDetailProps) {
   const { t } = useLanguage();
+  const [selectedImage, setSelectedImage] = useState(0);
 
   const getCategoryName = (categoryId: string) => {
     const key = categoryId as keyof typeof t.categories;
@@ -29,17 +32,52 @@ export function ProductDetail({ product }: ProductDetailProps) {
 
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-      {/* Image */}
+      {/* Image Gallery */}
       <ScrollReveal direction="left">
-        <div className="relative aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-background via-muted/30 to-muted/50 border border-border/30">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            className="object-contain p-6 drop-shadow-2xl"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            priority
-          />
+        <div className="space-y-3">
+          {/* Main Image */}
+          <div className="relative aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-background via-muted/30 to-muted/50 border border-border/30">
+            {product.images.map((img, index) => (
+              <Image
+                key={index}
+                src={img}
+                alt={`${product.name} - ${index + 1}`}
+                fill
+                className={cn(
+                  "object-contain p-6 drop-shadow-2xl transition-opacity duration-300",
+                  index === selectedImage ? "opacity-100" : "opacity-0"
+                )}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority={index === 0}
+              />
+            ))}
+          </div>
+
+          {/* Thumbnail Strip */}
+          {product.images.length > 1 && (
+            <div className="flex gap-2 overflow-x-auto pb-1">
+              {product.images.map((img, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedImage(index)}
+                  className={cn(
+                    "relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border-2 transition-all duration-200 bg-gradient-to-br from-background to-muted/30",
+                    index === selectedImage
+                      ? "border-accent ring-2 ring-accent/30"
+                      : "border-border/50 hover:border-accent/50 opacity-60 hover:opacity-100"
+                  )}
+                >
+                  <Image
+                    src={img}
+                    alt={`${product.name} - ${index + 1}`}
+                    fill
+                    className="object-contain p-1.5"
+                    sizes="80px"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </ScrollReveal>
 

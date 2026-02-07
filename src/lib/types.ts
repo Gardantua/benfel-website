@@ -19,7 +19,7 @@ export interface Product {
   name: string;
   category: ProductCategory;
   description: string;
-  image: string;
+  images: string[];
   isFeatured?: boolean;
   gridSpan?: "normal" | "wide" | "tall";
   // B2B Technical Specifications
