@@ -34,7 +34,7 @@ export function MobileNav() {
       </SheetTrigger>
       <SheetContent
         side="right"
-        className="w-[300px] bg-background border-border"
+        className="w-[80vw] sm:w-[300px] bg-background border-border"
       >
         <SheetTitle className="font-serif text-xl font-bold text-primary mb-8">
           {siteData.companyName}
@@ -45,7 +45,7 @@ export function MobileNav() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="px-4 py-3 text-lg font-medium text-foreground rounded-lg hover:bg-card transition-colors"
+              className="px-4 py-4 text-lg font-medium text-foreground rounded-lg hover:bg-card transition-colors"
             >
               {item.title}
             </Link>

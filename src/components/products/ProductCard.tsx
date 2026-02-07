@@ -115,7 +115,7 @@ export function ProductCard({ product }: ProductCardProps) {
             />
           ))}
 
-          <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute top-3 right-3 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
             <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-lg">
               <ArrowRight className="h-4 w-4" />
             </div>

@@ -30,7 +30,7 @@ export function FeaturedProducts() {
   };
 
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="bg-background py-14 sm:py-20 lg:py-28">
       <Container>
         <ScrollReveal>
           <SectionHeading
@@ -45,7 +45,7 @@ export function FeaturedProducts() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[320px]"
+          className="grid grid-cols-1 gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4 auto-rows-[260px] sm:auto-rows-[320px]"
         >
           {featured.map((product) => {
             const slug = product.slug || product.id;
@@ -91,7 +91,7 @@ export function FeaturedProducts() {
                       </div>
                     )}
                   </div>
-                  <div className="absolute top-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute top-4 right-4 z-20 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground">
                       <ArrowRight className="h-4 w-4" />
                     </div>
@@ -102,7 +102,7 @@ export function FeaturedProducts() {
           })}
         </motion.div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-8 sm:mt-12 text-center">
           <Link
             href="/urunler"
             className="inline-flex items-center gap-2 text-accent font-semibold hover:text-accent-light transition-colors group"

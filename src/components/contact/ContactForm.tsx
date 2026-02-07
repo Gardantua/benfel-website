@@ -73,7 +73,7 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-5">
       {/* Name */}
       <div className="space-y-2">
         <Label htmlFor="name">{t.contact.form.name} *</Label>

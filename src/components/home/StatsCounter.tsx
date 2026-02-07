@@ -16,13 +16,13 @@ export function StatsCounter() {
   ];
 
   return (
-    <section className="bg-primary py-16 lg:py-20">
+    <section className="bg-primary py-12 sm:py-16 lg:py-20">
       <Container>
         <ScrollReveal>
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-12">
+          <div className="grid grid-cols-2 gap-4 sm:gap-8 lg:grid-cols-4 lg:gap-12">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="font-serif text-4xl font-bold text-accent sm:text-5xl lg:text-6xl">
+                <div className="font-serif text-3xl font-bold text-accent sm:text-4xl lg:text-5xl xl:text-6xl">
                   <AnimatedCounter
                     value={stat.value}
                     suffix={stat.suffix}

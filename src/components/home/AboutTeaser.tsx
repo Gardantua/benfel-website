@@ -11,9 +11,9 @@ export function AboutTeaser() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-surface py-20 lg:py-28">
+    <section className="bg-surface py-14 sm:py-20 lg:py-28">
       <Container>
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Image */}
           <ScrollReveal direction="left">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-muted">

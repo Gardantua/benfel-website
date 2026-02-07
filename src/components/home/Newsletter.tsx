@@ -30,7 +30,7 @@ export function Newsletter() {
     <section className="bg-accent py-16 lg:py-20">
       <Container>
         <ScrollReveal>
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
             {/* Left - Text */}
             <div className="text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start gap-3 mb-3">
@@ -68,7 +68,7 @@ export function Newsletter() {
                   </div>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="flex gap-3">
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
                   <Input
                     type="email"
                     placeholder={t.newsletter.placeholder}

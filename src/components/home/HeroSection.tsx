@@ -113,8 +113,8 @@ export function HeroSection() {
                 <div className="absolute top-1/4 right-0 w-96 h-96 rounded-full bg-accent/5 blur-3xl" />
                 <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-white/5 blur-3xl" />
 
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
-                  <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-24 sm:py-20">
+                  <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
                     {/* Left - Text Content */}
                     {index === current && (
                       <motion.div
@@ -132,26 +132,26 @@ export function HeroSection() {
 
                         <motion.h1
                           variants={fadeUp}
-                          className="font-serif text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+                          className="font-serif text-3xl font-bold leading-snug text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl sm:leading-tight"
                         >
                           {t.hero.heading}
                         </motion.h1>
 
                         <motion.p
                           variants={fadeUp}
-                          className="mt-6 max-w-xl text-lg leading-relaxed text-white/70 sm:text-xl"
+                          className="mt-4 sm:mt-6 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg md:text-xl"
                         >
                           {t.brands[slide.titleKey]}
                         </motion.p>
 
                         <motion.div
                           variants={fadeUp}
-                          className="mt-10 flex flex-col gap-4 sm:flex-row"
+                          className="mt-8 sm:mt-10 flex flex-col gap-3 sm:flex-row sm:gap-4"
                         >
                           <Link href="/urunler">
                             <Button
                               size="lg"
-                              className="bg-[#C5943A] hover:bg-[#d4a34a] text-white font-semibold text-base px-8 py-6 group"
+                              className="bg-[#C5943A] hover:bg-[#d4a34a] text-white font-semibold text-base px-6 py-4 sm:px-8 sm:py-6 group"
                             >
                               {t.hero.primaryCta}
                               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -161,7 +161,7 @@ export function HeroSection() {
                             <Button
                               size="lg"
                               variant="outline"
-                              className="border-white/30 text-white hover:bg-white/10 font-semibold text-base px-8 py-6"
+                              className="border-white/30 text-white hover:bg-white/10 font-semibold text-base px-6 py-4 sm:px-8 sm:py-6"
                             >
                               {t.hero.secondaryCta}
                             </Button>
@@ -199,19 +199,19 @@ export function HeroSection() {
         {/* Custom Navigation Arrows */}
         <button
           onClick={scrollPrev}
-          className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all"
+          className="absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all"
         >
-          <ChevronLeft className="h-6 w-6" />
+          <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
         </button>
         <button
           onClick={scrollNext}
-          className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all"
+          className="absolute right-2 sm:right-8 top-1/2 -translate-y-1/2 z-20 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 transition-all"
         >
-          <ChevronRight className="h-6 w-6" />
+          <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
         </button>
 
         {/* Pagination Dots */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+        <div className="absolute bottom-24 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
           {bannerSlides.map((_, index) => (
             <button
               key={index}
@@ -231,7 +231,7 @@ export function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-12 sm:bottom-20 left-1/2 -translate-x-1/2 z-20 hidden sm:block"
       >
         <div className="flex flex-col items-center gap-2">
           <span className="text-xs text-white/40 uppercase tracking-widest">

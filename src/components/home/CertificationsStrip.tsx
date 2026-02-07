@@ -37,7 +37,7 @@ export function CertificationsStrip() {
               {t.certifications.subtitle}
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-20">
+          <div className="flex flex-row items-center justify-center gap-8 sm:gap-12 lg:gap-20">
             {certifications.map((cert, index) => (
               <motion.div
                 key={index}

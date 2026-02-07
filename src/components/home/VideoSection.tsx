@@ -45,7 +45,7 @@ export function VideoSection() {
                 className="mt-10 relative group"
               >
                 <div className="absolute inset-0 rounded-full bg-accent/20 animate-ping" />
-                <div className="relative flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-2xl group-hover:bg-accent-light transition-colors">
+                <div className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-2xl group-hover:bg-accent-light transition-colors">
                   <Play className="h-8 w-8 sm:h-10 sm:w-10 ml-1" fill="currentColor" />
                 </div>
               </motion.button>
@@ -76,9 +76,9 @@ export function VideoSection() {
             >
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute -top-12 right-0 text-white hover:text-accent transition-colors"
+                className="absolute top-2 right-2 sm:-top-12 sm:right-0 z-10 bg-black/50 sm:bg-transparent rounded-full p-1 text-white hover:text-accent transition-colors"
               >
-                <X className="h-8 w-8" />
+                <X className="h-7 w-7 sm:h-8 sm:w-8" />
               </button>
               <iframe
                 src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}

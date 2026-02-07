@@ -26,8 +26,8 @@ export function Footer() {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <Container className="py-16">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <Container className="py-10 sm:py-16">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-4">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <h3 className="font-serif text-2xl font-bold text-primary-foreground mb-4">

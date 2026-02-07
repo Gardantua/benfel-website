@@ -31,7 +31,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
   };
 
   return (
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+    <div className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-16">
       {/* Image Gallery */}
       <ScrollReveal direction="left">
         <div className="space-y-3">
@@ -61,7 +61,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
                   key={index}
                   onClick={() => setSelectedImage(index)}
                   className={cn(
-                    "relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border-2 transition-all duration-200 bg-gradient-to-br from-background to-muted/30",
+                    "relative h-16 w-16 sm:h-20 sm:w-20 flex-shrink-0 overflow-hidden rounded-lg border-2 transition-all duration-200 bg-gradient-to-br from-background to-muted/30",
                     index === selectedImage
                       ? "border-accent ring-2 ring-accent/30"
                       : "border-border/50 hover:border-accent/50 opacity-60 hover:opacity-100"

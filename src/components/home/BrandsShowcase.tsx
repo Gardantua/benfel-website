@@ -55,7 +55,7 @@ export function BrandsShowcase() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {brands.map((brand, index) => (
             <motion.div
               key={brand.name}
@@ -68,7 +68,7 @@ export function BrandsShowcase() {
                 href={brand.href}
                 className={`group relative block h-full overflow-hidden rounded-2xl bg-gradient-to-br ${brand.color} border border-border/50 hover:border-accent/50 transition-all duration-300`}
               >
-                <div className="relative aspect-square p-6">
+                <div className="relative aspect-square p-4 sm:p-6">
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 3 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -83,10 +83,10 @@ export function BrandsShowcase() {
                   </motion.div>
                 </div>
                 <div className="p-4 pt-0 text-center">
-                  <h3 className="font-serif text-xl font-bold text-foreground group-hover:text-accent transition-colors">
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-foreground group-hover:text-accent transition-colors">
                     {brand.name}
                   </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
                     {brand.description}
                   </p>
                 </div>

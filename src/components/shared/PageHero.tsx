@@ -13,7 +13,7 @@ interface PageHeroProps {
 
 export function PageHero({ title, subtitle, breadcrumbs }: PageHeroProps) {
   return (
-    <section className="relative bg-primary pt-32 pb-16 lg:pt-40 lg:pb-20">
+    <section className="relative bg-primary pt-24 pb-12 sm:pt-32 sm:pb-16 lg:pt-40 lg:pb-20">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--primary-light)_0%,_transparent_70%)] opacity-30" />
       <Container className="relative">
         <Breadcrumbs items={breadcrumbs} />
@@ -21,7 +21,7 @@ export function PageHero({ title, subtitle, breadcrumbs }: PageHeroProps) {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="font-serif text-4xl font-bold text-primary-foreground sm:text-5xl lg:text-6xl mt-6"
+          className="font-serif text-3xl font-bold text-primary-foreground sm:text-4xl lg:text-5xl xl:text-6xl mt-3 sm:mt-6"
         >
           {title}
         </motion.h1>
