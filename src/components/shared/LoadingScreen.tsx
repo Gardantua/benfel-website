@@ -38,7 +38,7 @@ export function LoadingScreen() {
                 style={{ width: 80, height: 80 }}
               />
               <div className="flex h-20 w-20 items-center justify-center">
-                <span className="font-serif text-2xl font-bold text-accent">B</span>
+                <span className="font-serif text-2xl font-bold text-accent">K</span>
               </div>
             </motion.div>
 
@@ -50,7 +50,7 @@ export function LoadingScreen() {
               className="text-center"
             >
               <h1 className="font-serif text-2xl font-bold text-foreground">
-                Benfel
+                Kalendos
               </h1>
               <motion.p
                 initial={{ opacity: 0 }}

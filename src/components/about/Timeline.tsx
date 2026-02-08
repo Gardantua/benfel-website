@@ -8,7 +8,7 @@ const timelineEvents = [
   {
     year: "2014",
     title: "Kuruluş",
-    description: "Benfel, gıda sektöründe kaliteli ürünler üretme vizyonuyla kuruldu.",
+    description: "Kalendos, gıda sektöründe kaliteli ürünler üretme vizyonuyla kuruldu.",
   },
   {
     year: "2016",

@@ -11,20 +11,20 @@ import { siteData } from "@/lib/siteData";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.benfel.com.tr"),
+  metadataBase: new URL("https://kalendos.vercel.app"),
   title: {
-    template: "%s | Benfel",
+    template: "%s | Kalendos",
     default: `${siteData.companyName} | ${siteData.tagline}`,
   },
   description: siteData.description,
-  keywords: ["gofret", "bisküvi", "kek", "sürme çikolata", "benfel", "gıda üreticisi"],
-  authors: [{ name: "Benfel" }],
-  creator: "Benfel",
+  keywords: ["gofret", "bisküvi", "kek", "sürme çikolata", "kalendos", "gıda üreticisi"],
+  authors: [{ name: "Kalendos" }],
+  creator: "Kalendos",
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://www.benfel.com.tr",
-    siteName: "Benfel",
+    url: "https://kalendos.vercel.app",
+    siteName: "Kalendos",
     title: `${siteData.companyName} | ${siteData.tagline}`,
     description: siteData.description,
   },
@@ -59,7 +59,7 @@ export default function RootLayout({
         <LanguageProvider>
           <LoadingScreen />
           <Header />
-          <main className="min-h-screen">{children}</main>
+          <main className="min-h-screen pt-16 lg:pt-20">{children}</main>
           <Footer />
           <BackToTop />
           <WhatsAppButton />

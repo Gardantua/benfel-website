@@ -1,9 +1,9 @@
 import type { SiteData } from "./types";
 
 export const siteData: SiteData = {
-  companyName: "Benfel",
+  companyName: "Kalendos",
   tagline: "Sizi Gülümseten Tatlar",
-  description: "Benfel, bisküvi, gofret, çikolata ve kek üretim ve ihracatında lider firmalardan biri olmak amacıyla 2017 yılında İstanbul'da kurulmuştur. 8.000 m² kapalı alanda, son teknoloji ile donatılmış 4 üretim hattıyla en kaliteli ürünleri üretmekteyiz.",
+  description: "Kalendos, bisküvi, gofret, çikolata ve kek üretim ve ihracatında lider firmalardan biri olmak amacıyla 2017 yılında İstanbul'da kurulmuştur. 8.000 m² kapalı alanda, son teknoloji ile donatılmış 4 üretim hattıyla en kaliteli ürünleri üretmekteyiz.",
 
   companyInfo: {
     established: 2017,

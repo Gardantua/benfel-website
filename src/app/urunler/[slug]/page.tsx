@@ -21,10 +21,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${product.name} | Benfel Ürünleri`,
-    description: `${product.name} - ${product.description}. Benfel kalitesiyle.`,
+    title: `${product.name} | Kalendos Ürünleri`,
+    description: `${product.name} - ${product.description}. Kalendos kalitesiyle.`,
     openGraph: {
-      title: `${product.name} | Benfel`,
+      title: `${product.name} | Kalendos`,
       description: product.description,
     },
   };

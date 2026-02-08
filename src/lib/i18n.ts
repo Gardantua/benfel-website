@@ -53,6 +53,8 @@ export const translations = {
       productNotFound: "Ürün Bulunamadı",
       all: "Tümü",
       noProducts: "Bu kategoride henüz ürün bulunmamaktadır.",
+      downloadCatalog: "Ürün Kataloğunu İndir",
+      catalogDesc: "Tüm ürün yelpazemizi PDF formatında indirin.",
     },
     video: {
       eyebrow: "Fabrikamız",
@@ -63,14 +65,14 @@ export const translations = {
     about: {
       eyebrow: "Hakkımızda",
       title: "2017'den Bu Yana Kalite ve Lezzet",
-      description: "Benfel, bisküvi, gofret, çikolata ve kek üretim ve ihracatında lider firmalardan biri olmak amacıyla 2017 yılında İstanbul'da kurulmuştur.",
+      description: "Kalendos, bisküvi, gofret, çikolata ve kek üretim ve ihracatında lider firmalardan biri olmak amacıyla 2017 yılında İstanbul'da kurulmuştur.",
       learnMore: "Daha Fazla Bilgi",
       pageTitle: "Kurumsal",
       pageSubtitle: "On yılı aşkın tecrübemizle, kaliteden ödün vermeden üretiyoruz.",
       storyEyebrow: "Hikayemiz",
       storyTitle: "Hikayemiz",
       storyParagraphs: [
-        "Benfel, gıda sektöründe on yılı aşkın tecrübesiyle Türkiye'nin önde gelen gofret, bisküvi, kek ve sürme çikolata üreticilerinden biri olarak sektörde güçlü bir yer edinmiştir. Kuruluşumuzdan bu yana, kalite ve müşteri memnuniyetini ön planda tutarak büyümeye devam ediyoruz.",
+        "Kalendos, gıda sektöründe on yılı aşkın tecrübesiyle Türkiye'nin önde gelen gofret, bisküvi, kek ve sürme çikolata üreticilerinden biri olarak sektörde güçlü bir yer edinmiştir. Kuruluşumuzdan bu yana, kalite ve müşteri memnuniyetini ön planda tutarak büyümeye devam ediyoruz.",
         "Modern üretim tesislerimizde, uluslararası gıda güvenliği standartlarına uygun olarak üretim gerçekleştiriyoruz. Doğal hammaddeler kullanarak, her ürünümüzde eşsiz bir tat deneyimi sunmayı hedefliyoruz.",
         "Bugün, geniş ürün yelpazemiz ve güçlü ihracat ağımızla hem yurt içinde hem de yurt dışında milyonlarca tüketiciye ulaşıyoruz.",
       ],
@@ -225,6 +227,8 @@ export const translations = {
       productNotFound: "Product Not Found",
       all: "All",
       noProducts: "No products found in this category.",
+      downloadCatalog: "Download Product Catalog",
+      catalogDesc: "Download our full product range in PDF format.",
     },
     video: {
       eyebrow: "Our Factory",
@@ -235,14 +239,14 @@ export const translations = {
     about: {
       eyebrow: "About Us",
       title: "Quality and Taste Since 2017",
-      description: "Benfel was established in Istanbul in 2017 with the aim of becoming one of the leading companies in biscuit, wafer, chocolate and cake production and export.",
+      description: "Kalendos was established in Istanbul in 2017 with the aim of becoming one of the leading companies in biscuit, wafer, chocolate and cake production and export.",
       learnMore: "Learn More",
       pageTitle: "About Us",
       pageSubtitle: "With over a decade of experience, we produce without compromising on quality.",
       storyEyebrow: "Our Story",
       storyTitle: "Our Story",
       storyParagraphs: [
-        "Benfel has established a strong position in the sector as one of Turkey's leading wafer, biscuit, cake and spread chocolate producers with over a decade of experience in the food industry. Since our establishment, we continue to grow by prioritizing quality and customer satisfaction.",
+        "Kalendos has established a strong position in the sector as one of Turkey's leading wafer, biscuit, cake and spread chocolate producers with over a decade of experience in the food industry. Since our establishment, we continue to grow by prioritizing quality and customer satisfaction.",
         "In our modern production facilities, we manufacture in accordance with international food safety standards. By using natural raw materials, we aim to provide a unique taste experience in each of our products.",
         "Today, we reach millions of consumers both domestically and internationally with our wide product range and strong export network.",
       ],
@@ -397,6 +401,8 @@ export const translations = {
       productNotFound: "Producto No Encontrado",
       all: "Todos",
       noProducts: "No se encontraron productos en esta categoría.",
+      downloadCatalog: "Descargar Catálogo de Productos",
+      catalogDesc: "Descargue nuestra gama completa de productos en formato PDF.",
     },
     video: {
       eyebrow: "Nuestra Fábrica",
@@ -407,14 +413,14 @@ export const translations = {
     about: {
       eyebrow: "Sobre Nosotros",
       title: "Calidad y Sabor Desde 2017",
-      description: "Benfel fue establecida en Estambul en 2017 con el objetivo de convertirse en una de las empresas líderes en la producción y exportación de galletas, obleas, chocolate y pasteles.",
+      description: "Kalendos fue establecida en Estambul en 2017 con el objetivo de convertirse en una de las empresas líderes en la producción y exportación de galletas, obleas, chocolate y pasteles.",
       learnMore: "Más Información",
       pageTitle: "Corporativo",
       pageSubtitle: "Con más de una década de experiencia, producimos sin comprometer la calidad.",
       storyEyebrow: "Nuestra Historia",
       storyTitle: "Nuestra Historia",
       storyParagraphs: [
-        "Benfel se ha establecido como uno de los principales productores de obleas, galletas, pasteles y crema de chocolate de Turquía con más de una década de experiencia en la industria alimentaria. Desde nuestra fundación, seguimos creciendo priorizando la calidad y la satisfacción del cliente.",
+        "Kalendos se ha establecido como uno de los principales productores de obleas, galletas, pasteles y crema de chocolate de Turquía con más de una década de experiencia en la industria alimentaria. Desde nuestra fundación, seguimos creciendo priorizando la calidad y la satisfacción del cliente.",
         "En nuestras modernas instalaciones de producción, fabricamos de acuerdo con los estándares internacionales de seguridad alimentaria. Utilizando materias primas naturales, nuestro objetivo es proporcionar una experiencia de sabor única en cada uno de nuestros productos.",
         "Hoy, llegamos a millones de consumidores tanto a nivel nacional como internacional con nuestra amplia gama de productos y nuestra sólida red de exportación.",
       ],
@@ -569,6 +575,8 @@ export const translations = {
       productNotFound: "المنتج غير موجود",
       all: "الكل",
       noProducts: "لم يتم العثور على منتجات في هذه الفئة.",
+      downloadCatalog: "تحميل كتالوج المنتجات",
+      catalogDesc: "قم بتحميل مجموعة منتجاتنا الكاملة بصيغة PDF.",
     },
     video: {
       eyebrow: "مصنعنا",

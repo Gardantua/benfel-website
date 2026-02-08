@@ -7,25 +7,16 @@ interface LogoProps {
 }
 
 export function Logo({ variant = "dark", className = "" }: LogoProps) {
-  const logoSrc = variant === "light"
-    ? "/images/benfel-logo-white.png"
-    : "/images/benfel-logo.png";
-
   return (
-    <Link href="/" className={`flex items-center gap-3 ${className}`}>
+    <Link href="/" className={`flex items-center ${className}`}>
       <Image
-        src={logoSrc}
-        alt="Benfel"
-        width={50}
-        height={39}
-        className={`object-contain ${variant === "dark" ? "brightness-0" : ""}`}
+        src="/images/kalendos-snacks.png"
+        alt="Kalendos Snacks"
+        width={140}
+        height={50}
+        className="object-contain"
         priority
       />
-      <span className={`font-serif text-xl font-bold tracking-tight ${
-        variant === "light" ? "text-primary-foreground" : "text-primary"
-      }`}>
-        Benfel
-      </span>
     </Link>
   );
 }

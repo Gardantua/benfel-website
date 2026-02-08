@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { Gamepad2 } from "lucide-react";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
@@ -57,7 +58,19 @@ export function Header() {
                 {item.title}
               </Link>
             ))}
-            <div className="ml-4 flex items-center gap-3">
+            <Link
+              href="/kids"
+              className={cn(
+                "px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-1.5",
+                pathname === "/kids"
+                  ? "text-accent"
+                  : "text-primary-foreground/80 hover:text-primary-foreground"
+              )}
+            >
+              <Gamepad2 className="h-4 w-4" />
+              Kids
+            </Link>
+            <div className="ml-2 flex items-center gap-3">
               <LanguageSwitcher />
               <Link href="/iletisim">
                 <Button className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold text-sm">

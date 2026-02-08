@@ -1,7 +1,8 @@
 import { HeroSection } from "@/components/home/HeroSection";
+import { CatalogBanner } from "@/components/home/CatalogBanner";
 import { StatsCounter } from "@/components/home/StatsCounter";
 import { BrandsShowcase } from "@/components/home/BrandsShowcase";
-import { FeaturedProducts } from "@/components/home/FeaturedProducts";
+import { BentoShowcase } from "@/components/home/BentoShowcase";
 import { VideoSection } from "@/components/home/VideoSection";
 import { AboutTeaser } from "@/components/home/AboutTeaser";
 import { CertificationsStrip } from "@/components/home/CertificationsStrip";
@@ -21,9 +22,10 @@ export default function HomePage() {
         }}
       />
       <HeroSection />
+      <CatalogBanner />
       <StatsCounter />
       <BrandsShowcase />
-      <FeaturedProducts />
+      <BentoShowcase />
       <VideoSection />
       <AboutTeaser />
       <CertificationsStrip />

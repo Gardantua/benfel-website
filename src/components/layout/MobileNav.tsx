@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, Gamepad2 } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { siteData } from "@/lib/siteData";
@@ -50,6 +50,14 @@ export function MobileNav() {
               {item.title}
             </Link>
           ))}
+          <Link
+            href="/kids"
+            onClick={() => setOpen(false)}
+            className="px-4 py-4 text-lg font-medium text-foreground rounded-lg hover:bg-card transition-colors flex items-center gap-2"
+          >
+            <Gamepad2 className="h-5 w-5 text-accent" />
+            Kalendos Kids
+          </Link>
         </nav>
         <div className="mt-8 px-4 space-y-4">
           <LanguageSwitcher />

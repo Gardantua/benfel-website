@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteData } from "@/lib/siteData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.benfel.com.tr";
+  const baseUrl = "https://kalendos.vercel.app";
 
   const productUrls = siteData.products.map((product) => ({
     url: `${baseUrl}/urunler/${product.slug}`,

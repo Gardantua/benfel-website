@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail, Instagram, Facebook, Linkedin, Youtube } from "lucide-react";
 import { Container } from "./Container";
 import { Separator } from "@/components/ui/separator";
@@ -30,9 +31,15 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-4">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <h3 className="font-serif text-2xl font-bold text-primary-foreground mb-4">
-              {siteData.companyName}
-            </h3>
+            <Link href="/" className="inline-block mb-4">
+              <Image
+                src="/images/kalendos-snacks.png"
+                alt="Kalendos Snacks"
+                width={120}
+                height={45}
+                className="object-contain"
+              />
+            </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               {t.footer.description}
             </p>

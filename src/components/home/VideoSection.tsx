@@ -11,7 +11,7 @@ export function VideoSection() {
   const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
-  // Replace with actual Benfel YouTube video ID
+  // Replace with actual Kalendos YouTube video ID
   const videoId = "dQw4w9WgXcQ"; // Placeholder - update with real video
 
   return (
@@ -82,7 +82,7 @@ export function VideoSection() {
               </button>
               <iframe
                 src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-                title="Benfel Fabrika Turu"
+                title="Kalendos Fabrika Turu"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full rounded-lg"
