@@ -49,35 +49,35 @@
 :root {
   --radius: 0.5rem;
 
-  /* Benfel Premium Palette */
-  --background: #FDFBF7;
-  --foreground: #2A1810;
-  --card: #F5F0E8;
-  --card-foreground: #2A1810;
-  --popover: #F5F0E8;
-  --popover-foreground: #2A1810;
-  --primary: #3C1518;
-  --primary-foreground: #F5F0E8;
-  --primary-light: #69332B;
-  --secondary: #F5F0E8;
-  --secondary-foreground: #2A1810;
-  --muted: #E8DFD0;
-  --muted-foreground: #6B5B4E;
-  --accent: #C5943A;
-  --accent-foreground: #FDFBF7;
-  --accent-light: #D4AD5E;
-  --destructive: #C53030;
-  --border: #D9CEBE;
-  --input: #D9CEBE;
-  --ring: #C5943A;
-  --surface: #F9F5EE;
-  --success: #4A7C59;
+  /* Kalendos Logo-Derived Fresh Palette */
+  --background: #FAFAF9;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --primary: #E31E24;
+  --primary-foreground: #FFFFFF;
+  --primary-light: #FF3B42;
+  --secondary: #F3F4F6;
+  --secondary-foreground: #1A1A1A;
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  --accent: #009FA3;
+  --accent-foreground: #FFFFFF;
+  --accent-light: #00B8BF;
+  --destructive: #DC2626;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #009FA3;
+  --surface: #F9FAFB;
+  --success: #10B981;
 
-  --chart-1: #3C1518;
-  --chart-2: #C5943A;
-  --chart-3: #69332B;
-  --chart-4: #D4AD5E;
-  --chart-5: #6B5B4E;
+  --chart-1: #E31E24;
+  --chart-2: #009FA3;
+  --chart-3: #FF3B42;
+  --chart-4: #00B8BF;
+  --chart-5: #6B7280;
 }
 
 @layer base {
@@ -104,6 +104,6 @@ body {
 
 /* Selection colors */
 ::selection {
-  background-color: #C5943A;
-  color: #FDFBF7;
+  background-color: var(--accent);
+  color: var(--accent-foreground, #FFFFFF);
 }

@@ -35,8 +35,8 @@ export const translations = {
     },
     products: {
       eyebrow: "Ürünlerimiz",
-      title: "Öne Çıkan Lezzetler",
-      subtitle: "En sevilen ürünlerimizden bir seçki. Her biri özenle, doğal hammaddelerle üretilmiştir.",
+      title: "Kalendos'tan Kareler",
+      subtitle: "Lezzetli anlardan bir seçki. Detaylar için görsele tıklayın.",
       viewAll: "Tüm Ürünleri Görüntüle",
       allProducts: "Tüm Ürünler",
       backToProducts: "Tüm Ürünler",
@@ -209,8 +209,8 @@ export const translations = {
     },
     products: {
       eyebrow: "Our Products",
-      title: "Featured Flavours",
-      subtitle: "A selection of our most beloved products. Each one crafted with care using natural ingredients.",
+      title: "Frames from Kalendos",
+      subtitle: "A selection of delicious moments. Click on an image for details.",
       viewAll: "View All Products",
       allProducts: "All Products",
       backToProducts: "All Products",
@@ -383,8 +383,8 @@ export const translations = {
     },
     products: {
       eyebrow: "Nuestros Productos",
-      title: "Sabores Destacados",
-      subtitle: "Una selección de nuestros productos más queridos. Cada uno elaborado con cuidado usando ingredientes naturales.",
+      title: "Momentos de Kalendos",
+      subtitle: "Una selección de momentos deliciosos. Haz clic en la imagen para más detalles.",
       viewAll: "Ver Todos los Productos",
       allProducts: "Todos los Productos",
       backToProducts: "Todos los Productos",
@@ -557,8 +557,8 @@ export const translations = {
     },
     products: {
       eyebrow: "منتجاتنا",
-      title: "النكهات المميزة",
-      subtitle: "مجموعة مختارة من منتجاتنا الأكثر شعبية. كل منها مصنوع بعناية باستخدام مكونات طبيعية.",
+      title: "لقطات من كالندوس",
+      subtitle: "مجموعة مختارة من اللحظات اللذيذة. انقر على الصورة لمزيد من التفاصيل.",
       viewAll: "عرض جميع المنتجات",
       allProducts: "جميع المنتجات",
       backToProducts: "جميع المنتجات",

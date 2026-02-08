@@ -1,5 +1,4 @@
 import { HeroSection } from "@/components/home/HeroSection";
-import { CatalogBanner } from "@/components/home/CatalogBanner";
 import { StatsCounter } from "@/components/home/StatsCounter";
 import { BrandsShowcase } from "@/components/home/BrandsShowcase";
 import { BentoShowcase } from "@/components/home/BentoShowcase";
@@ -22,7 +21,6 @@ export default function HomePage() {
         }}
       />
       <HeroSection />
-      <CatalogBanner />
       <StatsCounter />
       <BrandsShowcase />
       <BentoShowcase />

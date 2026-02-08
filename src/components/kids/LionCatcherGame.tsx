@@ -18,10 +18,10 @@ const SNACKS = [
 
 // Score milestone messages
 const MILESTONES = [
-  { score: 100, message: "Aslan tadina bakti!", emoji: "😋" },
-  { score: 200, message: "Atistirdi!", emoji: "😄" },
-  { score: 300, message: "Agzina kadar doydu!", emoji: "🤩" },
-  { score: 500, message: "Efsane Avci!", emoji: "👑" },
+  { score: 100, message: "Aslan Tadına Baktı!", emoji: "😋" },
+  { score: 200, message: "Aslan Atıştırdı!", emoji: "😄" },
+  { score: 300, message: "Aslan Doydu!", emoji: "🤩" },
+  { score: 400, message: "Aslan Tıka Basa Doydu!", emoji: "👑" },
 ];
 
 interface FallingSnack {
@@ -82,8 +82,8 @@ export function LionCatcherGame() {
   useEffect(() => { gameStateRef.current = gameState; }, [gameState]);
   useEffect(() => {
     scoreRef.current = score;
-    // Very gradual speed increase: starts slow, ramps up over time
-    speedMultiplierRef.current = 0.5 + Math.floor(score / 100) * 0.15;
+    // Every 20 points = 1.1x speed multiplier, starting from 0.8x base
+    speedMultiplierRef.current = 0.8 * Math.pow(1.1, Math.floor(score / 20));
   }, [score]);
 
   useEffect(() => {
@@ -192,13 +192,12 @@ export function LionCatcherGame() {
       isMovingRef.current = false;
     }
 
-    // Spawn: starts slow (every 2500ms), gets faster
-    const baseInterval = 2500;
-    const spawnInterval = Math.max(700, baseInterval - speedMultiplierRef.current * 200);
+    // Spawn: starts at 1200ms, gets faster with speed multiplier
+    const spawnInterval = Math.max(400, 1200 / speedMultiplierRef.current);
     if (timestamp - lastSpawnRef.current > spawnInterval) {
       const snack = SNACKS[Math.floor(Math.random() * SNACKS.length)];
-      // Base speed is very slow, increases gradually
-      const baseSpeed = 0.4 + Math.random() * 0.4;
+      // Base fall speed - moderate start, increases with multiplier
+      const baseSpeed = 0.5 + Math.random() * 0.5;
       const newSnack: FallingSnack = {
         id: snackIdRef.current++,
         snack,
@@ -274,7 +273,7 @@ export function LionCatcherGame() {
   const startGame = useCallback(() => {
     setScore(0);
     scoreRef.current = 0;
-    speedMultiplierRef.current = 0.5;
+    speedMultiplierRef.current = 0.8; // base 0.8x, grows 1.1x every 20pts
     setLionX(50);
     lionXRef.current = 50;
     lastLionXRef.current = 50;
@@ -302,17 +301,18 @@ export function LionCatcherGame() {
 
   // Get milestone title for game over
   const getScoreTitle = (s: number) => {
-    if (s >= 300) return { text: "Agzina Kadar Doydu!", emoji: "🤩" };
-    if (s >= 200) return { text: "Atistirdi!", emoji: "😄" };
-    if (s >= 100) return { text: "Tadina Bakti!", emoji: "😋" };
-    return { text: "Yeni Basliyor!", emoji: "🦁" };
+    if (s >= 400) return { text: "Aslan Tıka Basa Doydu!", emoji: "👑" };
+    if (s >= 300) return { text: "Aslan Doydu!", emoji: "🤩" };
+    if (s >= 200) return { text: "Aslan Atıştırdı!", emoji: "😄" };
+    if (s >= 100) return { text: "Aslan Tadına Baktı!", emoji: "😋" };
+    return { text: "Yeni Başlıyor!", emoji: "🦁" };
   };
 
   const scoreTitle = getScoreTitle(score);
   const staminaPercent = (stamina / MAX_STAMINA) * 100;
 
   return (
-    <div className="bg-gradient-to-b from-sky-300 via-sky-200 to-green-200 relative overflow-hidden rounded-2xl mx-auto" style={{ maxWidth: "960px" }}>
+    <div className="bg-gradient-to-b from-sky-300 via-sky-200 to-green-200 relative overflow-hidden rounded-2xl mx-auto" style={{ maxWidth: "960px", height: "calc(100vh - 120px)", maxHeight: "700px" }}>
       {/* Decorative clouds */}
       <div className="absolute top-10 left-[8%] w-24 h-12 bg-white/40 rounded-full blur-sm" />
       <div className="absolute top-20 left-[40%] w-32 h-14 bg-white/30 rounded-full blur-sm" />
@@ -331,7 +331,7 @@ export function LionCatcherGame() {
                 className="h-full rounded-full transition-all duration-150"
                 style={{
                   width: `${staminaPercent}%`,
-                  backgroundColor: staminaPercent > 40 ? "#4A7C59" : staminaPercent > 15 ? "#C5943A" : "#C53030",
+                  backgroundColor: staminaPercent > 40 ? "#009FA3" : staminaPercent > 15 ? "#F59E0B" : "#E31E24",
                 }}
               />
             </div>
@@ -370,9 +370,8 @@ export function LionCatcherGame() {
         ref={gameAreaRef}
         onPointerMove={handlePointerMove}
         onTouchMove={handlePointerMove as unknown as React.TouchEventHandler}
-        className="relative w-full select-none"
+        className="relative w-full h-full select-none"
         style={{
-          height: "min(80vh, 700px)",
           touchAction: "none",
         }}
       >
@@ -385,29 +384,29 @@ export function LionCatcherGame() {
               exit={{ opacity: 0, scale: 0.9 }}
               className="absolute inset-0 z-20 flex flex-col items-center justify-center p-4"
             >
-              <div className="bg-white/92 backdrop-blur-md rounded-3xl p-6 sm:p-10 shadow-2xl text-center max-w-md w-full">
-                <div className="text-7xl sm:text-8xl mb-3">🦁</div>
+              <div className="bg-white/92 backdrop-blur-md rounded-3xl p-5 sm:p-8 shadow-2xl text-center max-w-md w-full">
+                <div className="text-6xl sm:text-7xl mb-2">🦁</div>
                 <h1
-                  className="text-3xl sm:text-4xl font-bold text-primary mb-1"
+                  className="text-2xl sm:text-3xl font-bold text-primary mb-1"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   Kalendos Kids
                 </h1>
-                <p className="text-lg text-primary/70 mb-1 font-semibold">
-                  Aslan Atistirmalik Avcisi
+                <p className="text-base text-primary/70 mb-1 font-semibold">
+                  Aslan Atıştırmalık Avcısı
                 </p>
-                <p className="text-sm text-muted-foreground mb-5">
-                  Aslani saga sola hareket ettirerek dusen atistirmaliklari yakala! Bir tane bile kacirma!
+                <p className="text-sm text-muted-foreground mb-4">
+                  Aslanı sağa sola hareket ettirerek düşen atıştırmalıkları yakala! Bir tane bile kaçırma!
                 </p>
 
-                <div className="space-y-2.5 text-left text-sm text-primary/80 mb-5 bg-amber-50 rounded-xl p-4">
+                <div className="space-y-2 text-left text-sm text-primary/80 mb-4 bg-amber-50 rounded-xl p-3">
                   <div className="flex items-center gap-2">
                     <span>🖱️</span>
-                    <span>Fare veya parmaginla aslani hareket ettir</span>
+                    <span>Fare veya parmağınla aslanı hareket ettir</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span>⌨️</span>
-                    <span>Sol/Sag ok tuslari ile de oynayabilirsin</span>
+                    <span>Sol/Sağ ok tuşları ile de oynayabilirsin</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span>⚡</span>
@@ -415,7 +414,7 @@ export function LionCatcherGame() {
                   </div>
                   <div className="flex items-center gap-2">
                     <span>🏆</span>
-                    <span>100, 200, 300 puanda ozel seviyeler!</span>
+                    <span>100, 200, 300, 400 puanda özel seviyeler!</span>
                   </div>
                 </div>
 
@@ -448,21 +447,21 @@ export function LionCatcherGame() {
               exit={{ opacity: 0, scale: 0.9 }}
               className="absolute inset-0 z-20 flex flex-col items-center justify-center p-4 overflow-y-auto"
             >
-              <div className="bg-white/92 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-2xl text-center max-w-md w-full">
-                <div className="text-5xl sm:text-6xl mb-2">{scoreTitle.emoji}</div>
+              <div className="bg-white/92 backdrop-blur-md rounded-3xl p-4 sm:p-6 shadow-2xl text-center max-w-md w-full max-h-[calc(100vh-160px)] overflow-y-auto">
+                <div className="text-4xl sm:text-5xl mb-1">{scoreTitle.emoji}</div>
                 <h2
-                  className="text-2xl sm:text-3xl font-bold text-primary mb-0.5"
+                  className="text-xl sm:text-2xl font-bold text-primary mb-0.5"
                   style={{ fontFamily: "var(--font-playfair)" }}
                 >
                   {scoreTitle.text}
                 </h2>
-                <p className="text-muted-foreground text-sm mb-4">
-                  Bir atistirmalik kacti!
+                <p className="text-muted-foreground text-xs mb-3">
+                  Bir atıştırmalık kaçtı!
                 </p>
 
-                <div className="bg-accent/10 rounded-2xl p-4 mb-4">
-                  <div className="text-4xl sm:text-5xl font-bold text-accent mb-0.5">{score}</div>
-                  <div className="text-sm text-primary/70 font-medium">Toplam Skor</div>
+                <div className="bg-accent/10 rounded-xl p-3 mb-3">
+                  <div className="text-3xl sm:text-4xl font-bold text-accent mb-0.5">{score}</div>
+                  <div className="text-xs text-primary/70 font-medium">Toplam Skor</div>
                   {score >= highScore && score > 0 && (
                     <div className="mt-1 flex items-center justify-center gap-1 text-accent">
                       <Star className="h-4 w-4 fill-accent" />
@@ -472,37 +471,32 @@ export function LionCatcherGame() {
                   )}
                 </div>
 
-                {/* Caught snacks - bigger, clickable */}
+                {/* Caught snacks - large images on right */}
                 {caughtSnacks.size > 0 && (
-                  <div className="mb-5">
-                    <h3 className="text-sm font-semibold text-primary/70 mb-3">
-                      Yakalanan Atistirmaliklar:
+                  <div className="mb-4">
+                    <h3 className="text-sm font-semibold text-primary/70 mb-2">
+                      Yakalanan Atıştırmalıklar:
                     </h3>
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-3 gap-2">
                       {Array.from(caughtSnacks.entries()).map(([id, snack]) => (
                         <Link
                           key={id}
                           href={`/urunler/${snack.slug}`}
-                          className="flex items-center gap-3 bg-primary/5 hover:bg-accent/10 rounded-xl p-3 text-left transition-colors group"
+                          className="flex flex-col items-center bg-primary/5 hover:bg-accent/10 rounded-xl p-2 text-center transition-colors group"
                         >
-                          <div className="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0">
+                          <div className="relative w-20 h-20 sm:w-24 sm:h-24 shrink-0">
                             <Image
                               src={snack.image}
                               alt={snack.name}
                               fill
-                              className="object-contain drop-shadow-sm group-hover:scale-110 transition-transform"
+                              className="object-contain drop-shadow-md group-hover:scale-110 transition-transform"
                             />
                           </div>
-                          <div className="min-w-0">
-                            <div className="text-sm font-semibold text-primary truncate">
-                              {snack.name}
-                            </div>
-                            <div className="text-xs text-muted-foreground">
-                              x{snack.count}
-                            </div>
-                            <div className="text-[10px] text-accent font-medium mt-0.5">
-                              Urune git →
-                            </div>
+                          <div className="text-xs font-semibold text-primary truncate w-full mt-1">
+                            {snack.name}
+                          </div>
+                          <div className="text-xs text-accent font-bold">
+                            x{snack.count}
                           </div>
                         </Link>
                       ))}

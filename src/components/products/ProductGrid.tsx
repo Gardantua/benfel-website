@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { CategoryFilter } from "./CategoryFilter";
 import { ProductCard } from "./ProductCard";
@@ -11,9 +12,17 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export function ProductGrid() {
   const { t } = useLanguage();
+  const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<
     ProductCategory | "all"
   >("all");
+
+  useEffect(() => {
+    const cat = searchParams.get("category");
+    if (cat && siteData.categories.some((c) => c.id === cat)) {
+      setActiveCategory(cat as ProductCategory);
+    }
+  }, [searchParams]);
 
   const filteredProducts =
     activeCategory === "all"

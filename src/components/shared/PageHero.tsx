@@ -14,7 +14,7 @@ interface PageHeroProps {
 export function PageHero({ title, subtitle, breadcrumbs }: PageHeroProps) {
   return (
     <section className="relative bg-primary pt-6 pb-6 sm:pt-8 sm:pb-8 lg:pt-10 lg:pb-10">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--primary-light)_0%,_transparent_70%)] opacity-30" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.15)_0%,_transparent_70%)]" />
       <Container className="relative">
         <Breadcrumbs items={breadcrumbs} />
         <motion.h1

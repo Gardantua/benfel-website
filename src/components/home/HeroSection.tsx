@@ -76,7 +76,7 @@ export function HeroSection() {
         <CarouselContent className="-ml-0">
           {bannerSlides.map((slide, index) => (
             <CarouselItem key={slide.id} className="pl-0">
-              <div className="relative w-full aspect-[3/1] sm:aspect-[3.5/1] lg:aspect-[4/1] bg-[#3C1518]">
+              <div className="relative w-full aspect-[3/1] sm:aspect-[3.5/1] lg:aspect-[4/1] bg-primary">
                 <Image
                   src={slide.image}
                   alt={slide.id}
@@ -112,7 +112,7 @@ export function HeroSection() {
               onClick={() => scrollTo(index)}
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === current
-                  ? "w-8 bg-[#C5943A]"
+                  ? "w-8 bg-accent"
                   : "w-2 bg-white/50 hover:bg-white/70"
               }`}
             />
@@ -121,12 +121,12 @@ export function HeroSection() {
       </Carousel>
 
       {/* CTA buttons below banner */}
-      <div className="bg-[#3C1518] py-4 sm:py-5">
+      <div className="bg-primary py-4 sm:py-5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <Link href="/urunler">
             <Button
               size="lg"
-              className="bg-[#C5943A] hover:bg-[#d4a34a] text-white font-semibold text-sm sm:text-base px-6 py-3 group"
+              className="bg-primary-foreground text-primary hover:opacity-90 font-semibold text-sm sm:text-base px-6 py-3 group rounded-full"
             >
               {t.hero.primaryCta}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -136,7 +136,7 @@ export function HeroSection() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/30 text-white hover:bg-white/10 font-semibold text-sm sm:text-base px-6 py-3"
+              className="border-white/40 text-white hover:bg-white/15 font-semibold text-sm sm:text-base px-6 py-3 rounded-full"
             >
               {t.hero.secondaryCta}
             </Button>

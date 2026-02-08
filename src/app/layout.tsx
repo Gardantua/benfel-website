@@ -6,7 +6,9 @@ import { Toaster } from "@/components/ui/sonner";
 import { BackToTop } from "@/components/shared/BackToTop";
 import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
 import { LoadingScreen } from "@/components/shared/LoadingScreen";
+import { ThemeSwitcher } from "@/components/shared/ThemeSwitcher";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { siteData } from "@/lib/siteData";
 import "./globals.css";
 
@@ -57,13 +59,16 @@ export default function RootLayout({
         className={`${playfair.variable} ${inter.variable} font-sans antialiased`}
       >
         <LanguageProvider>
-          <LoadingScreen />
-          <Header />
-          <main className="min-h-screen pt-16 lg:pt-20">{children}</main>
-          <Footer />
-          <BackToTop />
-          <WhatsAppButton />
-          <Toaster position="top-right" richColors />
+          <ThemeProvider>
+            <LoadingScreen />
+            <Header />
+            <main className="min-h-screen pt-16 lg:pt-20 bg-background">{children}</main>
+            <Footer />
+            <BackToTop />
+            <WhatsAppButton />
+            <ThemeSwitcher />
+            <Toaster position="top-right" richColors />
+          </ThemeProvider>
         </LanguageProvider>
       </body>
     </html>

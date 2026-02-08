@@ -11,7 +11,6 @@ import { MobileNav } from "./MobileNav";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/shared/LanguageSwitcher";
 import { useLanguage } from "@/context/LanguageContext";
-import { siteData } from "@/lib/siteData";
 
 export function Header() {
   const { scrollDirection, scrollY } = useScrollDirection();
@@ -23,16 +22,15 @@ export function Header() {
     { href: "/", title: t.nav.home },
     { href: "/hakkimizda", title: t.nav.about },
     { href: "/urunler", title: t.nav.products },
-    { href: "/iletisim", title: t.nav.contact },
   ];
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-border",
         isScrolled
-          ? "bg-primary/95 backdrop-blur-md shadow-lg"
-          : "bg-primary",
+          ? "bg-secondary/80 backdrop-blur-md shadow-sm"
+          : "bg-secondary",
         scrollDirection === "down" && scrollY > 200
           ? "-translate-y-full"
           : "translate-y-0"
@@ -40,7 +38,7 @@ export function Header() {
     >
       <Container>
         <div className="flex h-16 items-center justify-between lg:h-20">
-          <Logo variant="light" />
+          <Logo />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
@@ -51,8 +49,8 @@ export function Header() {
                 className={cn(
                   "px-4 py-2 text-sm font-medium rounded-md transition-colors",
                   pathname === item.href
-                    ? "text-accent"
-                    : "text-primary-foreground/80 hover:text-primary-foreground"
+                    ? "text-primary font-semibold"
+                    : "text-foreground/70 hover:text-primary"
                 )}
               >
                 {item.title}
@@ -63,17 +61,17 @@ export function Header() {
               className={cn(
                 "px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-1.5",
                 pathname === "/kids"
-                  ? "text-accent"
-                  : "text-primary-foreground/80 hover:text-primary-foreground"
+                  ? "text-accent font-semibold"
+                  : "text-accent/70 hover:text-accent"
               )}
             >
               <Gamepad2 className="h-4 w-4" />
               Kids
             </Link>
-            <div className="ml-2 flex items-center gap-3">
+            <div className="ml-3 flex items-center gap-3">
               <LanguageSwitcher />
               <Link href="/iletisim">
-                <Button className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold text-sm">
+                <Button className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold text-sm rounded-full px-5">
                   {t.nav.contact}
                 </Button>
               </Link>

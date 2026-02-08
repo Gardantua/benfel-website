@@ -40,7 +40,7 @@ export function Footer() {
                 className="object-contain"
               />
             </Link>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
+            <p className="text-primary-foreground/60 text-sm leading-relaxed">
               {t.footer.description}
             </p>
           </div>
@@ -55,7 +55,7 @@ export function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+                  className="text-sm text-primary-foreground/60 hover:text-accent transition-colors"
                 >
                   {item.title}
                 </Link>
@@ -75,7 +75,7 @@ export function Footer() {
                   <Link
                     key={cat.id}
                     href={`/urunler?kategori=${cat.id}`}
-                    className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+                    className="text-sm text-primary-foreground/60 hover:text-accent transition-colors"
                   >
                     {t.categories[key] ?? cat.name}
                   </Link>
@@ -92,7 +92,7 @@ export function Footer() {
             <div className="flex flex-col gap-3">
               <div className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-1 text-accent shrink-0" />
-                <p className="text-sm text-primary-foreground/70">
+                <p className="text-sm text-primary-foreground/60">
                   {siteData.contact.address}
                 </p>
               </div>
@@ -100,7 +100,7 @@ export function Footer() {
                 <Phone className="h-4 w-4 text-accent shrink-0" />
                 <a
                   href={`tel:${siteData.contact.phone}`}
-                  className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+                  className="text-sm text-primary-foreground/60 hover:text-accent transition-colors"
                 >
                   {siteData.contact.phone}
                 </a>
@@ -109,7 +109,7 @@ export function Footer() {
                 <Mail className="h-4 w-4 text-accent shrink-0" />
                 <a
                   href={`mailto:${siteData.contact.email}`}
-                  className="text-sm text-primary-foreground/70 hover:text-accent transition-colors"
+                  className="text-sm text-primary-foreground/60 hover:text-accent transition-colors"
                 >
                   {siteData.contact.email}
                 </a>
@@ -121,7 +121,7 @@ export function Footer() {
         <Separator className="my-8 bg-primary-foreground/10" />
 
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-sm text-primary-foreground/50">
+          <p className="text-sm text-primary-foreground/40">
             © {new Date().getFullYear()} {siteData.companyName}. {t.footer.rights}
           </p>
           <div className="flex gap-4">
@@ -133,7 +133,7 @@ export function Footer() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary-foreground/50 hover:text-accent transition-colors"
+                  className="text-primary-foreground/40 hover:text-accent transition-colors"
                   aria-label={platform}
                 >
                   <Icon className="h-5 w-5" />
