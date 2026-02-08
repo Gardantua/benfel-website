@@ -312,7 +312,7 @@ export function LionCatcherGame() {
   const staminaPercent = (stamina / MAX_STAMINA) * 100;
 
   return (
-    <div className="bg-gradient-to-b from-sky-300 via-sky-200 to-green-200 relative overflow-hidden rounded-2xl mx-auto" style={{ maxWidth: "960px", height: "calc(100vh - 120px)", maxHeight: "700px" }}>
+    <div className="bg-gradient-to-b from-sky-300 via-sky-200 to-green-200 relative overflow-hidden rounded-2xl mx-auto" style={{ maxWidth: "960px", height: "calc(100dvh - 160px)", maxHeight: "700px", minHeight: "400px" }}>
       {/* Decorative clouds */}
       <div className="absolute top-10 left-[8%] w-24 h-12 bg-white/40 rounded-full blur-sm" />
       <div className="absolute top-20 left-[40%] w-32 h-14 bg-white/30 rounded-full blur-sm" />
@@ -382,9 +382,9 @@ export function LionCatcherGame() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="absolute inset-0 z-20 flex flex-col items-center justify-center p-4"
+              className="absolute inset-0 z-20 flex flex-col items-center justify-center p-3 sm:p-4 overflow-y-auto"
             >
-              <div className="bg-white/92 backdrop-blur-md rounded-3xl p-5 sm:p-8 shadow-2xl text-center max-w-md w-full">
+              <div className="bg-white/92 backdrop-blur-md rounded-3xl p-4 sm:p-8 shadow-2xl text-center max-w-md w-full my-auto">
                 <div className="text-6xl sm:text-7xl mb-2">🦁</div>
                 <h1
                   className="text-2xl sm:text-3xl font-bold text-primary mb-1"
@@ -445,9 +445,9 @@ export function LionCatcherGame() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="absolute inset-0 z-20 flex flex-col items-center justify-center p-4 overflow-y-auto"
+              className="absolute inset-0 z-20 flex flex-col items-center justify-center p-3 sm:p-4 overflow-y-auto"
             >
-              <div className="bg-white/92 backdrop-blur-md rounded-3xl p-4 sm:p-6 shadow-2xl text-center max-w-md w-full max-h-[calc(100vh-160px)] overflow-y-auto">
+              <div className="bg-white/92 backdrop-blur-md rounded-3xl p-4 sm:p-6 shadow-2xl text-center max-w-md w-full max-h-full overflow-y-auto my-auto">
                 <div className="text-4xl sm:text-5xl mb-1">{scoreTitle.emoji}</div>
                 <h2
                   className="text-xl sm:text-2xl font-bold text-primary mb-0.5"

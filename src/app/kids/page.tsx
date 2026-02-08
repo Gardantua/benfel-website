@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 export default function KidsPage() {
   return (
-    <section className="py-6 sm:py-10 px-4">
-      <div className="text-center mb-6">
-        <h1 className="font-serif text-2xl sm:text-3xl font-bold text-primary">
+    <section className="py-4 sm:py-10 px-2 sm:px-4">
+      <div className="text-center mb-3 sm:mb-6">
+        <h1 className="font-serif text-xl sm:text-3xl font-bold text-primary">
           Kalendos Kids
         </h1>
-        <p className="text-sm text-muted-foreground mt-1">
+        <p className="text-xs sm:text-sm text-muted-foreground mt-1">
           Aslan ile atistirmaliklari yakala!
         </p>
       </div>

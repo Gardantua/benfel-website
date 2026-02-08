@@ -102,7 +102,7 @@ export function ProductCard({ product }: ProductCardProps) {
                 "object-contain p-3 transition-opacity duration-300",
                 index === currentImageIndex ? "opacity-100" : "opacity-0"
               )}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
             />
           ))}
 
@@ -114,26 +114,26 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Content */}
-        <div className="p-4">
+        <div className="p-3 sm:p-4">
           <Badge
             variant="secondary"
-            className="mb-2 bg-accent/10 text-accent text-xs font-medium"
+            className="mb-1.5 sm:mb-2 bg-accent/10 text-accent text-[10px] sm:text-xs font-medium"
           >
             {getCategoryName(product.category)}
           </Badge>
-          <h3 className="font-serif text-lg font-bold text-foreground group-hover:text-accent transition-colors">
+          <h3 className="font-serif text-sm sm:text-lg font-bold text-foreground group-hover:text-accent transition-colors line-clamp-1">
             {product.name}
           </h3>
-          <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
+          <p className="mt-1 text-xs sm:text-sm text-muted-foreground line-clamp-2 hidden sm:block">
             {getProductDescription(product.id)}
           </p>
 
           {/* B2B Weight Options */}
           {product.weights && product.weights.length > 0 && (
-            <div className="mt-3 pt-3 border-t border-border/50">
-              <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-                <Package className="h-3.5 w-3.5 text-accent" />
-                <span className="font-medium text-foreground">
+            <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-border/50">
+              <div className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs text-muted-foreground">
+                <Package className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-accent shrink-0" />
+                <span className="font-medium text-foreground truncate">
                   {product.weights.join(" | ")}
                 </span>
               </div>

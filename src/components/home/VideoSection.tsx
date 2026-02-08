@@ -16,7 +16,7 @@ export function VideoSection() {
 
   return (
     <>
-      <section className="relative bg-primary py-20 lg:py-28 overflow-hidden">
+      <section className="relative bg-primary py-14 sm:py-20 lg:py-28 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{

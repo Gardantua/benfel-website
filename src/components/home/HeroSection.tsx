@@ -76,7 +76,7 @@ export function HeroSection() {
         <CarouselContent className="-ml-0">
           {bannerSlides.map((slide, index) => (
             <CarouselItem key={slide.id} className="pl-0">
-              <div className="relative w-full aspect-[3/1] sm:aspect-[3.5/1] lg:aspect-[4/1] bg-primary">
+              <div className="relative w-full aspect-[2/1] sm:aspect-[3/1] lg:aspect-[3.5/1] bg-primary">
                 <Image
                   src={slide.image}
                   alt={slide.id}

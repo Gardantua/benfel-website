@@ -11,7 +11,7 @@ export function CTASection() {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-primary py-20 lg:py-24">
+    <section className="bg-primary py-14 sm:py-20 lg:py-24">
       <Container>
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">

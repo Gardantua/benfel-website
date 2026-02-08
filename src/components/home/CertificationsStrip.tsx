@@ -23,7 +23,7 @@ export function CertificationsStrip() {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-card to-background py-16 lg:py-24">
+    <section className="bg-gradient-to-b from-card to-background py-12 sm:py-16 lg:py-24">
       <Container>
         <ScrollReveal>
           <div className="text-center mb-12">
@@ -37,7 +37,7 @@ export function CertificationsStrip() {
               {t.certifications.subtitle}
             </p>
           </div>
-          <div className="flex flex-row items-center justify-center gap-8 sm:gap-12 lg:gap-20">
+          <div className="flex flex-row items-center justify-center gap-6 sm:gap-12 lg:gap-20">
             {certifications.map((cert, index) => (
               <motion.div
                 key={index}
@@ -48,7 +48,7 @@ export function CertificationsStrip() {
                 whileHover={{ scale: 1.05 }}
                 className="flex flex-col items-center gap-4 text-center group"
               >
-                <div className="relative h-24 w-24 sm:h-28 sm:w-28 p-2 rounded-2xl bg-white shadow-lg border border-border/50 group-hover:shadow-xl group-hover:border-accent/30 transition-all duration-300">
+                <div className="relative h-20 w-20 sm:h-28 sm:w-28 p-2 rounded-2xl bg-white shadow-lg border border-border/50 group-hover:shadow-xl group-hover:border-accent/30 transition-all duration-300">
                   <Image
                     src={cert.image}
                     alt={cert.name}

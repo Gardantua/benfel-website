@@ -11,7 +11,7 @@ export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="fixed bottom-6 right-6 z-[60]">
+    <div className="fixed bottom-6 right-4 sm:right-6 z-[60]">
       <AnimatePresence>
         {isOpen && (
           <>
@@ -30,7 +30,7 @@ export function ThemeSwitcher() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ type: "spring", bounce: 0.15, duration: 0.4 }}
-              className="absolute bottom-16 right-0 w-[340px] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden z-[60]"
+              className="fixed bottom-20 right-4 sm:right-6 w-[calc(100vw-2rem)] sm:w-[340px] max-w-[340px] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden z-[60]"
             >
               <div className="p-4 border-b border-gray-100 bg-gray-50/80">
                 <div className="flex items-center justify-between">
@@ -152,7 +152,7 @@ export function ThemeSwitcher() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 via-purple-500 to-cyan-500 text-white shadow-lg hover:shadow-xl transition-shadow z-[60]"
+        className="relative flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-gradient-to-br from-rose-500 via-purple-500 to-cyan-500 text-white shadow-lg hover:shadow-xl transition-shadow z-[60]"
       >
         <AnimatePresence mode="wait">
           {isOpen ? (

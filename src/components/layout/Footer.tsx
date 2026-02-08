@@ -37,7 +37,7 @@ export function Footer() {
                 alt="Kalendos Snacks"
                 width={120}
                 height={45}
-                className="object-contain"
+                className="object-contain w-[100px] sm:w-[120px]"
               />
             </Link>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">

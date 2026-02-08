@@ -91,7 +91,7 @@ export function Newsletter() {
                       </motion.div>
                     ) : (
                       <>
-                        <span className="hidden sm:inline mr-2">{t.newsletter.subscribe}</span>
+                        <span className="mr-2">{t.newsletter.subscribe}</span>
                         <Send className="h-4 w-4" />
                       </>
                     )}

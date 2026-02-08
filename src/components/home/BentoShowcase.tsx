@@ -75,7 +75,7 @@ export function BentoShowcase() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.05 }}
-          className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 auto-rows-[160px] sm:auto-rows-[200px] lg:auto-rows-[240px]"
+          className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4 auto-rows-[140px] sm:auto-rows-[200px] lg:auto-rows-[240px]"
         >
           {galleryItems.map((item) => (
             <motion.div

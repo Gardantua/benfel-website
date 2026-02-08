@@ -14,7 +14,7 @@ export function Logo({ variant = "dark", className = "" }: LogoProps) {
         alt="Kalendos Snacks"
         width={140}
         height={50}
-        className="object-contain"
+        className="object-contain w-[110px] sm:w-[140px]"
         priority
       />
     </Link>

@@ -32,7 +32,7 @@ export function AboutTeaser() {
             <span className="mb-3 block text-sm font-semibold uppercase tracking-widest text-accent">
               {t.about.eyebrow}
             </span>
-            <h2 className="font-serif text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
+            <h2 className="font-serif text-2xl font-bold text-foreground sm:text-4xl lg:text-5xl">
               {siteData.companyName}
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">

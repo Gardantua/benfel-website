@@ -42,7 +42,7 @@ export function BrandsShowcase() {
   ];
 
   return (
-    <section className="bg-background py-16 lg:py-24 overflow-hidden">
+    <section className="bg-background py-12 sm:py-16 lg:py-24 overflow-hidden">
       <Container>
         <ScrollReveal>
           <div className="text-center mb-12">
@@ -55,7 +55,7 @@ export function BrandsShowcase() {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
           {brands.map((brand, index) => (
             <motion.div
               key={brand.name}
@@ -82,11 +82,11 @@ export function BrandsShowcase() {
                     />
                   </motion.div>
                 </div>
-                <div className="p-4 pt-0 text-center">
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-foreground group-hover:text-accent transition-colors">
+                <div className="p-3 sm:p-4 pt-0 text-center">
+                  <h3 className="font-serif text-base sm:text-xl font-bold text-foreground group-hover:text-accent transition-colors">
                     {brand.name}
                   </h3>
-                  <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
+                  <p className="mt-1 text-xs sm:text-sm text-muted-foreground line-clamp-2">
                     {brand.description}
                   </p>
                 </div>

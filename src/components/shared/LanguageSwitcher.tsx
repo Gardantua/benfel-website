@@ -30,7 +30,7 @@ export function LanguageSwitcher() {
           onClick={() => setLocale(loc)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className={`relative px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+          className={`relative px-2 py-1.5 sm:px-3 rounded-full text-sm font-medium transition-colors ${
             locale === loc
               ? "text-accent-foreground"
               : "text-muted-foreground hover:text-foreground"
@@ -43,9 +43,9 @@ export function LanguageSwitcher() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             />
           )}
-          <span className="relative z-10 flex items-center gap-1.5">
-            <span>{localeFlags[loc]}</span>
-            <span>{localeNames[loc]}</span>
+          <span className="relative z-10 flex items-center gap-1 sm:gap-1.5">
+            <span className="text-base sm:text-sm">{localeFlags[loc]}</span>
+            <span className="hidden sm:inline">{localeNames[loc]}</span>
           </span>
         </motion.button>
       ))}
