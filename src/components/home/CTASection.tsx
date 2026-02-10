@@ -19,13 +19,13 @@ export function CTASection() {
             <h2 className="font-serif text-3xl font-bold text-primary-foreground sm:text-4xl lg:text-5xl">
               {t.cta.title}
             </h2>
-            <p className="mt-4 text-lg text-primary-foreground/60">
+            <p className="mt-4 text-lg text-primary-foreground/80">
               {t.cta.subtitle}
             </p>
             <Link href="/iletisim" className="mt-8 inline-block">
               <Button
                 size="lg"
-                className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold text-base px-8 py-6 group"
+                className="bg-gray-900 hover:bg-gray-800 text-white font-semibold text-base px-8 py-6 group"
               >
                 {t.cta.button}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

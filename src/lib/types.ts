@@ -69,6 +69,32 @@ export interface CompanyInfo {
   productionLines: number;
 }
 
+export type NewsCategory = "haberler" | "duyurular" | "fuarlar";
+
+export interface NewsCategoryInfo {
+  id: NewsCategory;
+  name: string;
+}
+
+export interface NewsItem {
+  id: string;
+  slug: string;
+  title: string;
+  category: NewsCategory;
+  summary: string;
+  content: string;
+  image: string;
+  date: string;
+  isFeatured?: boolean;
+  fairDetails?: {
+    startDate: string;
+    endDate: string;
+    location: string;
+    city: string;
+    standNumber?: string;
+  };
+}
+
 export interface SiteData {
   companyName: string;
   tagline: string;
@@ -80,4 +106,6 @@ export interface SiteData {
   stats: StatItem[];
   products: Product[];
   categories: CategoryInfo[];
+  newsItems: NewsItem[];
+  newsCategories: NewsCategoryInfo[];
 }

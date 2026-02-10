@@ -135,8 +135,7 @@ export function HeroSection() {
           <Link href="/iletisim">
             <Button
               size="lg"
-              variant="outline"
-              className="border-white/40 text-white hover:bg-white/15 font-semibold text-sm sm:text-base px-6 py-3 rounded-full"
+              className="bg-gray-900 hover:bg-gray-800 text-white font-semibold text-sm sm:text-base px-6 py-3 rounded-full"
             >
               {t.hero.secondaryCta}
             </Button>

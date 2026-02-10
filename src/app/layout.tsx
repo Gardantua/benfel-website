@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/sonner";
 import { BackToTop } from "@/components/shared/BackToTop";
 import { WhatsAppButton } from "@/components/shared/WhatsAppButton";
 import { LoadingScreen } from "@/components/shared/LoadingScreen";
-import { ThemeSwitcher } from "@/components/shared/ThemeSwitcher";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { siteData } from "@/lib/siteData";
@@ -66,7 +65,6 @@ export default function RootLayout({
             <Footer />
             <BackToTop />
             <WhatsAppButton />
-            <ThemeSwitcher />
             <Toaster position="top-right" richColors />
           </ThemeProvider>
         </LanguageProvider>

@@ -22,6 +22,7 @@ export function Header() {
     { href: "/", title: t.nav.home },
     { href: "/hakkimizda", title: t.nav.about },
     { href: "/urunler", title: t.nav.products },
+    { href: "/haberler", title: t.nav.news },
   ];
 
   return (

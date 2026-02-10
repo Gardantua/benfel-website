@@ -17,8 +17,10 @@ function applyThemeToDOM(t: Theme) {
   });
 }
 
+const defaultTheme = themes.find((t) => t.id === "sadece-kirmizi-beyaz") ?? themes[0];
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>(themes[0]);
+  const [theme, setThemeState] = useState<Theme>(defaultTheme);
 
   const setTheme = useCallback((themeId: string) => {
     const t = themes.find((th) => th.id === themeId);
@@ -31,12 +33,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("kalendos-theme");
-    if (saved) {
-      const t = themes.find((th) => th.id === saved);
-      if (t) {
-        setThemeState(t);
-        applyThemeToDOM(t);
-      }
+    const t = saved ? themes.find((th) => th.id === saved) : defaultTheme;
+    if (t) {
+      setThemeState(t);
+      applyThemeToDOM(t);
     }
   }, []);
 

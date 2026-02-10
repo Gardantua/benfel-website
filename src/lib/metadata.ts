@@ -1,4 +1,4 @@
-import type { Product } from "./types";
+import type { Product, NewsItem } from "./types";
 
 export function generateOrganizationSchema() {
   return {
@@ -28,6 +28,29 @@ export function generateProductSchema(product: Product) {
       name: "Kalendos",
     },
     category: product.category,
+  };
+}
+
+export function generateNewsArticleSchema(newsItem: NewsItem) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: newsItem.title,
+    description: newsItem.summary,
+    image: `https://kalendos.vercel.app${newsItem.image}`,
+    datePublished: newsItem.date,
+    author: {
+      "@type": "Organization",
+      name: "Kalendos",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Kalendos",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://kalendos.vercel.app/images/logo.png",
+      },
+    },
   };
 }
 

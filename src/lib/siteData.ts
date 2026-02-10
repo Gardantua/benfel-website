@@ -254,5 +254,96 @@ export const siteData: SiteData = {
     { id: "biskuvi", name: "Bisküviler (Bacano)" },
     { id: "dolgulu-biskuvi", name: "Dolgulu Bisküviler (Regosto)" },
     { id: "kek", name: "Kekler (Trilex & Star)" },
-  ]
+  ],
+
+  newsCategories: [
+    { id: "haberler", name: "Haberler" },
+    { id: "duyurular", name: "Duyurular" },
+    { id: "fuarlar", name: "Fuarlar" },
+  ],
+
+  newsItems: [
+    {
+      id: "gulfood-2026-dubai",
+      slug: "gulfood-2026-dubai",
+      title: "Gulfood 2026 Dubai",
+      category: "fuarlar",
+      summary: "Kalendos, dünyanın en büyük gıda fuarı Gulfood 2026'da yerini alıyor. Dubai World Trade Centre'da standımızı ziyaret edin.",
+      content: `Kalendos olarak, gıda sektörünün en prestijli etkinliklerinden biri olan Gulfood 2026 Fuarı'na katılmanın heyecanını yaşıyoruz.
+
+Dubai World Trade Centre'da gerçekleşecek bu uluslararası organizasyonda, tüm ürün yelpazemizi sergileyecek ve global iş ortaklarımızla bir araya geleceğiz.
+
+Standımızda Bacano, Regosto, Trilex ve Star serilerimizin tamamını deneyimleyebilir, yeni ürün çalışmalarımız hakkında bilgi alabilirsiniz.
+
+B2B ihracat fırsatları ve distribütörlük görüşmeleri için randevu almak isterseniz bizimle iletişime geçebilirsiniz.`,
+      image: "/images/products/bacano-classic.png",
+      date: "2026-02-17",
+      isFeatured: true,
+      fairDetails: {
+        startDate: "2026-02-17",
+        endDate: "2026-02-21",
+        location: "Dubai World Trade Centre",
+        city: "Dubai, BAE",
+        standNumber: "Hall 3, Stand B-142",
+      },
+    },
+    {
+      id: "5-uretim-hatti",
+      slug: "5-uretim-hatti",
+      title: "5. Üretim Hattımız Devreye Alındı",
+      category: "haberler",
+      summary: "Artan talebe karşılık olarak 5. üretim hattımızı devreye aldık. Yeni hattımız ile üretim kapasitemizi %25 artırdık.",
+      content: `Kalendos ailesi olarak, büyüyen ihracat hacmimiz ve artan müşteri taleplerine cevap verebilmek amacıyla 5. üretim hattımızı devreye almış bulunuyoruz.
+
+Son teknoloji ile donatılmış yeni üretim hattımız, özellikle dolgulu bisküvi kategorisinde üretim kapasitemizi %25 oranında artırmaktadır.
+
+Bu yatırım ile birlikte toplam üretim alanımız 10.000 m²'ye ulaşmış olup, Avrupa, Orta Doğu ve Afrika pazarlarındaki müşterilerimize daha hızlı ve verimli hizmet sunabilecek konuma gelmiş bulunmaktayız.
+
+Yeni hattımız, ISO 9001 ve HACCP standartlarına uygun olarak tasarlanmış olup, gıda güvenliği konusundaki titiz yaklaşımımızı sürdürmektedir.`,
+      image: "/images/products/regosto-classic.png",
+      date: "2026-01-15",
+      isFeatured: false,
+    },
+    {
+      id: "helal-sertifika-yenileme",
+      slug: "helal-sertifika-yenileme",
+      title: "Helal Sertifikamız Yenilendi",
+      category: "duyurular",
+      summary: "Uluslararası geçerliliğe sahip Helal sertifikamız başarıyla yenilenmiştir. Tüm ürünlerimiz helal üretim standartlarına uygundur.",
+      content: `Kalendos olarak, üretim süreçlerimizde helal gıda standartlarına olan bağlılığımızı bir kez daha teyit ettik.
+
+Uluslararası akreditasyona sahip bağımsız denetim kuruluşu tarafından gerçekleştirilen kapsamlı denetim sonucunda, Helal sertifikamız başarıyla yenilenmiştir.
+
+Bu sertifika, hammaddeden son ürüne kadar tüm üretim süreçlerimizin helal gıda standartlarına uygun olduğunu belgeleyen uluslararası geçerliliğe sahip bir belgedir.
+
+Özellikle Orta Doğu ve Kuzey Afrika pazarlarındaki iş ortaklarımız için büyük önem taşıyan bu sertifika, Kalendos'un kalite ve güvenilirlik konusundaki kararlılığının bir göstergesidir.`,
+      image: "/images/products/trilex-vanilla.png",
+      date: "2026-01-08",
+      isFeatured: false,
+    },
+    {
+      id: "ism-koln-2026",
+      slug: "ism-koln-2026",
+      title: "ISM Köln 2026",
+      category: "fuarlar",
+      summary: "Dünyanın en büyük şekerleme ve atıştırmalık fuarı ISM Köln 2026'da Kalendos olarak yerimizi alıyoruz.",
+      content: `Kalendos, dünyanın en büyük şekerleme ve atıştırmalık fuarı olan ISM Köln 2026'ya katılıyor.
+
+Almanya'nın Köln şehrinde gerçekleşecek bu uluslararası fuarda, Avrupa pazarına yönelik ürünlerimizi sergileyeceğiz.
+
+ISM fuarı, dünya genelinden 1.700'den fazla katılımcı ve 30.000'den fazla ziyaretçiyi ağırlayan sektörün en önemli buluşma noktasıdır.
+
+Standımızda özellikle Avrupa pazarı için geliştirdiğimiz yeni ambalaj tasarımlarımızı ve premium ürün serilerimizi tanıtacağız. Distribütörlük ve iş birliği fırsatları için standımıza bekliyoruz.`,
+      image: "/images/products/star-bear.png",
+      date: "2026-04-06",
+      isFeatured: true,
+      fairDetails: {
+        startDate: "2026-04-06",
+        endDate: "2026-04-09",
+        location: "Koelnmesse",
+        city: "Köln, Almanya",
+        standNumber: "Hall 10.2, Stand D-058",
+      },
+    },
+  ],
 };

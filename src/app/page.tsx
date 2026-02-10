@@ -5,6 +5,7 @@ import { BentoShowcase } from "@/components/home/BentoShowcase";
 import { VideoSection } from "@/components/home/VideoSection";
 import { AboutTeaser } from "@/components/home/AboutTeaser";
 import { CertificationsStrip } from "@/components/home/CertificationsStrip";
+import { LatestNews } from "@/components/home/LatestNews";
 import { Newsletter } from "@/components/home/Newsletter";
 import { CTASection } from "@/components/home/CTASection";
 import { generateOrganizationSchema } from "@/lib/metadata";
@@ -27,6 +28,7 @@ export default function HomePage() {
       <VideoSection />
       <AboutTeaser />
       <CertificationsStrip />
+      <LatestNews />
       <Newsletter />
       <CTASection />
     </>

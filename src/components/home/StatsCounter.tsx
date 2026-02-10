@@ -22,13 +22,13 @@ export function StatsCounter() {
           <div className="grid grid-cols-2 gap-4 sm:gap-8 lg:grid-cols-4 lg:gap-12">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="font-serif text-2xl font-bold text-accent sm:text-4xl lg:text-5xl xl:text-6xl">
+                <div className="font-serif text-2xl font-bold text-white sm:text-4xl lg:text-5xl xl:text-6xl">
                   <AnimatedCounter
                     value={stat.value}
                     suffix={stat.suffix}
                   />
                 </div>
-                <p className="mt-2 text-sm font-medium text-primary-foreground/60 sm:text-base">
+                <p className="mt-2 text-sm font-medium text-white/80 sm:text-base">
                   {t.stats[stat.labelKey]}
                 </p>
               </div>
