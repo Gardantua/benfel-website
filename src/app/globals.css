@@ -49,34 +49,34 @@
 :root {
   --radius: 0.5rem;
 
-  /* Kalendos Logo-Derived Fresh Palette */
-  --background: #FAFAF9;
+  /* Kırmızı-Beyaz Palette */
+  --background: #FFFFFF;
   --foreground: #1A1A1A;
   --card: #FFFFFF;
   --card-foreground: #1A1A1A;
   --popover: #FFFFFF;
   --popover-foreground: #1A1A1A;
-  --primary: #E31E24;
+  --primary: #DC2626;
   --primary-foreground: #FFFFFF;
-  --primary-light: #FF3B42;
-  --secondary: #F3F4F6;
+  --primary-light: #EF4444;
+  --secondary: #FEF2F2;
   --secondary-foreground: #1A1A1A;
-  --muted: #F3F4F6;
+  --muted: #FEF2F2;
   --muted-foreground: #6B7280;
-  --accent: #009FA3;
+  --accent: #DC2626;
   --accent-foreground: #FFFFFF;
-  --accent-light: #00B8BF;
+  --accent-light: #EF4444;
   --destructive: #DC2626;
-  --border: #E5E7EB;
-  --input: #E5E7EB;
-  --ring: #009FA3;
-  --surface: #F9FAFB;
+  --border: #FECACA;
+  --input: #FECACA;
+  --ring: #DC2626;
+  --surface: #FFF5F5;
   --success: #10B981;
 
-  --chart-1: #E31E24;
-  --chart-2: #009FA3;
-  --chart-3: #FF3B42;
-  --chart-4: #00B8BF;
+  --chart-1: #DC2626;
+  --chart-2: #EF4444;
+  --chart-3: #F87171;
+  --chart-4: #FCA5A5;
   --chart-5: #6B7280;
 }
 
