@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, X } from "lucide-react";
+import { Play, X, Pause } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { useLanguage } from "@/context/LanguageContext";
@@ -10,9 +10,17 @@ import { useLanguage } from "@/context/LanguageContext";
 export function VideoSection() {
   const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Replace with actual Kalendos YouTube video ID
-  const videoId = "dQw4w9WgXcQ"; // Placeholder - update with real video
+  const handleOpen = () => {
+    setIsOpen(true);
+    setTimeout(() => videoRef.current?.play(), 300);
+  };
+
+  const handleClose = () => {
+    videoRef.current?.pause();
+    setIsOpen(false);
+  };
 
   return (
     <>
@@ -39,7 +47,7 @@ export function VideoSection() {
 
               {/* Video Play Button */}
               <motion.button
-                onClick={() => setIsOpen(true)}
+                onClick={handleOpen}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="mt-10 relative group"
@@ -64,7 +72,7 @@ export function VideoSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setIsOpen(false)}
+            onClick={handleClose}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           >
             <motion.div
@@ -75,17 +83,17 @@ export function VideoSection() {
               className="relative w-full max-w-4xl aspect-video"
             >
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={handleClose}
                 className="absolute top-2 right-2 sm:-top-12 sm:right-0 z-10 bg-black/50 sm:bg-transparent rounded-full p-1 text-white hover:text-accent transition-colors"
               >
                 <X className="h-7 w-7 sm:h-8 sm:w-8" />
               </button>
-              <iframe
-                src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-                title="Kalendos Fabrika Turu"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+              <video
+                ref={videoRef}
+                src="/videos/production.mp4"
+                controls
                 className="w-full h-full rounded-lg"
+                playsInline
               />
             </motion.div>
           </motion.div>

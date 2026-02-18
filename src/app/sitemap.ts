@@ -1,8 +1,10 @@
 import type { MetadataRoute } from "next";
 import { siteData } from "@/lib/siteData";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://kalendos.vercel.app";
+  const baseUrl = "https://kalendos.com.tr";
 
   const productUrls = siteData.products.map((product) => ({
     url: `${baseUrl}/urunler/${product.slug}`,

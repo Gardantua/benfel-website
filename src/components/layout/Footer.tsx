@@ -36,9 +36,9 @@ export function Footer() {
               <Image
                 src="/images/kalendos-snacks.png"
                 alt="Kalendos Snacks"
-                width={120}
-                height={45}
-                className="object-contain w-[100px] sm:w-[120px]"
+                width={260}
+                height={90}
+                className="object-contain w-[200px] sm:w-[260px]"
               />
             </Link>
             <p className="text-primary-foreground/60 text-sm leading-relaxed">

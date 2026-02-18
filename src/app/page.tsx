@@ -1,5 +1,5 @@
 import { HeroSection } from "@/components/home/HeroSection";
-import { StatsCounter } from "@/components/home/StatsCounter";
+
 import { BrandsShowcase } from "@/components/home/BrandsShowcase";
 import { BentoShowcase } from "@/components/home/BentoShowcase";
 import { VideoSection } from "@/components/home/VideoSection";
@@ -22,7 +22,6 @@ export default function HomePage() {
         }}
       />
       <HeroSection />
-      <StatsCounter />
       <BrandsShowcase />
       <BentoShowcase />
       <VideoSection />
@@ -30,6 +29,7 @@ export default function HomePage() {
       <CertificationsStrip />
       <LatestNews />
       <Newsletter />
+
       <CTASection />
     </>
   );

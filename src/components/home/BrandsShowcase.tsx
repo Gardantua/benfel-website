@@ -12,32 +12,32 @@ export function BrandsShowcase() {
 
   const brands = [
     {
-      name: "Bacano",
-      description: t.brands.bacano,
-      image: "/images/products/bacano-classic.png",
-      href: "/urunler?category=biskuvi",
-      color: "from-red-500/20 to-red-600/10",
-    },
-    {
       name: "Regosto",
       description: t.brands.regosto,
       image: "/images/products/regosto-classic.png",
       href: "/urunler?category=dolgulu-biskuvi",
-      color: "from-amber-500/20 to-amber-600/10",
-    },
-    {
-      name: "Trilex",
-      description: t.brands.trilex,
-      image: "/images/products/trilex-vanilla.png",
-      href: "/urunler?category=kek",
-      color: "from-orange-500/20 to-orange-600/10",
-    },
-    {
-      name: "Star",
-      description: t.brands.star,
-      image: "/images/products/star-bear.png",
-      href: "/urunler?category=kek",
       color: "from-blue-500/20 to-blue-600/10",
+    },
+    {
+      name: "Cremora",
+      description: t.brands.cremora,
+      image: "/images/products/cremora.png",
+      href: "/urunler?category=surme-krema",
+      color: "from-amber-700/20 to-amber-800/10",
+    },
+    {
+      name: "Tahera",
+      description: t.brands.tahera,
+      image: "/images/products/tahera.png",
+      href: "/urunler?category=surme-krema",
+      color: "from-yellow-500/20 to-yellow-600/10",
+    },
+    {
+      name: "Berriva",
+      description: t.brands.berriva,
+      image: "/images/products/berriva.png",
+      href: "/urunler?category=recel",
+      color: "from-red-500/20 to-red-600/10",
     },
   ];
 

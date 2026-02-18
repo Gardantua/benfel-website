@@ -4,9 +4,9 @@ export interface NavItem {
 }
 
 export type ProductCategory =
-  | "biskuvi"
   | "dolgulu-biskuvi"
-  | "kek";
+  | "surme-krema"
+  | "recel";
 
 export interface CategoryInfo {
   id: ProductCategory;

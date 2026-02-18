@@ -2,10 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -13,18 +10,14 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useLanguage } from "@/context/LanguageContext";
 
 const bannerSlides = [
-  { id: "regosto-mosaic", image: "/images/banners/regosto-mosaic.png" },
-  { id: "regosto-espresso", image: "/images/banners/regosto-espresso.png" },
-  { id: "cremora", image: "/images/banners/cremora.png" },
-  { id: "tahera", image: "/images/banners/tahera.png" },
-  { id: "berriva", image: "/images/banners/berriva.png" },
+  { id: "cremora", image: "/images/banners/cremora-banner.jpg" },
+  { id: "tahera", image: "/images/banners/tahera-banner.jpg" },
+  { id: "berriva", image: "/images/banners/berriva-banner.jpg" },
 ];
 
 export function HeroSection() {
-  const { t } = useLanguage();
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const autoplayRef = useRef(
@@ -120,28 +113,6 @@ export function HeroSection() {
         </div>
       </Carousel>
 
-      {/* CTA buttons below banner */}
-      <div className="bg-primary py-4 sm:py-5">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-          <Link href="/urunler">
-            <Button
-              size="lg"
-              className="bg-primary-foreground text-primary hover:opacity-90 font-semibold text-sm sm:text-base px-6 py-3 group rounded-full"
-            >
-              {t.hero.primaryCta}
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </Link>
-          <Link href="/iletisim">
-            <Button
-              size="lg"
-              className="bg-gray-900 hover:bg-gray-800 text-white font-semibold text-sm sm:text-base px-6 py-3 rounded-full"
-            >
-              {t.hero.secondaryCta}
-            </Button>
-          </Link>
-        </div>
-      </div>
     </section>
   );
 }

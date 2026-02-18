@@ -30,7 +30,7 @@ export function MobileNav() {
           className="lg:hidden text-foreground/70 hover:bg-muted"
           aria-label="Menu"
         >
-          <Menu className="h-6 w-6" />
+          <Menu className="h-8 w-8" />
         </Button>
       </SheetTrigger>
       <SheetContent
@@ -54,9 +54,9 @@ export function MobileNav() {
           <Link
             href="/kids"
             onClick={() => setOpen(false)}
-            className="px-4 py-4 text-lg font-medium text-foreground rounded-lg hover:bg-card transition-colors flex items-center gap-2"
+            className="px-4 py-4 text-lg font-bold rounded-xl bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 text-white flex items-center gap-2 hover:shadow-lg transition-all"
           >
-            <Gamepad2 className="h-5 w-5 text-accent" />
+            <Gamepad2 className="h-5 w-5" />
             Kalendos Kids
           </Link>
         </nav>

@@ -8,12 +8,13 @@ import { Play, RotateCcw, Trophy, Star, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const SNACKS = [
-  { id: "bacano", name: "Bacano", slug: "bacano-classic", image: "/images/products/bacano-classic.png", points: 10 },
-  { id: "bacano-strawberry", name: "Bacano Strawberry", slug: "bacano-strawberry", image: "/images/products/bacano-strawberry.png", points: 15 },
-  { id: "regosto", name: "Regosto", slug: "regosto-classic", image: "/images/products/regosto-classic.png", points: 10 },
-  { id: "trilex", name: "Trilex", slug: "trilex-vanilla", image: "/images/products/trilex-vanilla.png", points: 20 },
-  { id: "star-bear", name: "Star Bear", slug: "star-bear", image: "/images/products/star-bear.png", points: 25 },
-  { id: "bacano-banana", name: "Bacano Banana", slug: "bacano-banana", image: "/images/products/bacano-banana.png", points: 15 },
+  { id: "regosto-classic", name: "Regosto Classic", slug: "regosto-classic", image: "/images/products/regosto-classic.png", points: 10 },
+  { id: "regosto-mosaic", name: "Regosto Mosaic", slug: "regosto-mosaic", image: "/images/products/regosto-mosaic.png", points: 10 },
+  { id: "regosto-dark", name: "Regosto Dark", slug: "regosto-dark", image: "/images/products/regosto-dark.png", points: 15 },
+  { id: "regosto-espresso", name: "Regosto Espresso", slug: "regosto-espresso", image: "/images/products/regosto-espresso.png", points: 15 },
+  { id: "cremora", name: "Cremora", slug: "cremora", image: "/images/products/cremora.png", points: 20 },
+  { id: "tahera", name: "Tahera", slug: "tahera", image: "/images/products/tahera.png", points: 20 },
+  { id: "berriva", name: "Berriva", slug: "berriva", image: "/images/products/berriva.png", points: 25 },
 ];
 
 // Score milestone messages

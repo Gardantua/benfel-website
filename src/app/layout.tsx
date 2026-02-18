@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: `${siteData.companyName} | ${siteData.tagline}`,
   },
   description: siteData.description,
-  keywords: ["gofret", "bisküvi", "kek", "sürme çikolata", "kalendos", "gıda üreticisi"],
+  keywords: ["dolgulu bisküvi", "sürme krema", "reçel", "tahini", "kalendos", "gıda üreticisi", "regosto", "cremora", "tahera", "berriva"],
   authors: [{ name: "Kalendos" }],
   creator: "Kalendos",
   openGraph: {
@@ -33,6 +33,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteData.companyName} | ${siteData.tagline}`,
     description: siteData.description,
+  },
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
   },
   robots: {
     index: true,

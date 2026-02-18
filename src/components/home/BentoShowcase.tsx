@@ -25,33 +25,33 @@ const galleryItems: GalleryItem[] = [
   {
     id: "berriva-strawberry",
     image: "/images/gallery/berriva-strawberry.png",
-    href: "/urunler",
+    href: "/urunler/berriva",
     label: "Berriva",
-    span: "col-span-1 row-span-2",       // portrait 848×1264
+    span: "col-span-1 row-span-2",
     objectFit: "cover",
   },
   {
-    id: "cremora-lifestyle",
-    image: "/images/gallery/cremora-lifestyle.png",
-    href: "/urunler",
+    id: "tahera-kare",
+    image: "/images/gallery/tahera-kare.png",
+    href: "/urunler/tahera",
+    label: "Tahera",
+    span: "col-span-1 row-span-1",
+    objectFit: "cover",
+  },
+  {
+    id: "regosto-kare",
+    image: "/images/gallery/regosto-kare.png",
+    href: "/urunler/regosto-mosaic",
+    label: "Regosto Mosaic",
+    span: "col-span-1 row-span-1",
+    objectFit: "cover",
+  },
+  {
+    id: "cremora-kare",
+    image: "/images/gallery/cremora-kare.png",
+    href: "/urunler/cremora",
     label: "Cremora",
-    span: "col-span-1 row-span-1",       // ~square 2304×1856
-    objectFit: "cover",
-  },
-  {
-    id: "regosto-lifestyle-1",
-    image: "/images/gallery/regosto-lifestyle-1.png",
-    href: "/urunler?category=dolgulu-biskuvi",
-    label: "Dolgulu Bisküviler",
-    span: "col-span-1 row-span-1",       // ~square 1152×928
-    objectFit: "cover",
-  },
-  {
-    id: "cremora-banner",
-    image: "/images/banners/cremora.png",
-    href: "/urunler",
-    label: "Cremora",
-    span: "col-span-2 row-span-1",       // wide 3712×1152
+    span: "col-span-2 row-span-1",
     objectFit: "cover",
   },
 ];

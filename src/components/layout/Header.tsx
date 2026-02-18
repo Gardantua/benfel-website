@@ -38,7 +38,7 @@ export function Header() {
       )}
     >
       <Container>
-        <div className="flex h-16 items-center justify-between lg:h-20">
+        <div className="flex h-20 items-center justify-between lg:h-24">
           <Logo />
 
           {/* Desktop Navigation */}
@@ -48,7 +48,7 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-md transition-colors",
+                  "px-5 py-2.5 text-base font-medium rounded-md transition-colors",
                   pathname === item.href
                     ? "text-primary font-semibold"
                     : "text-foreground/70 hover:text-primary"
@@ -59,12 +59,7 @@ export function Header() {
             ))}
             <Link
               href="/kids"
-              className={cn(
-                "px-3 py-2 text-sm font-medium rounded-md transition-colors flex items-center gap-1.5",
-                pathname === "/kids"
-                  ? "text-accent font-semibold"
-                  : "text-accent/70 hover:text-accent"
-              )}
+              className="px-4 py-2 text-base font-bold rounded-full bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-500 text-white flex items-center gap-1.5 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300 animate-pulse hover:animate-none"
             >
               <Gamepad2 className="h-4 w-4" />
               Kids
@@ -72,7 +67,7 @@ export function Header() {
             <div className="ml-3 flex items-center gap-3">
               <LanguageSwitcher />
               <Link href="/iletisim">
-                <Button className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold text-sm rounded-full px-5">
+                <Button className="bg-accent hover:bg-accent-light text-accent-foreground font-semibold text-base rounded-full px-6 py-2.5">
                   {t.nav.contact}
                 </Button>
               </Link>

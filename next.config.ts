@@ -32,16 +32,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  output: "export",
   images: {
-    formats: ["image/avif", "image/webp"],
-  },
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: securityHeaders,
-      },
-    ];
+    unoptimized: true,
   },
 };
 

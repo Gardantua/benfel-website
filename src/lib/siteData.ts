@@ -32,9 +32,9 @@ export const siteData: SiteData = {
       { title: "İletişim", href: "/iletisim" },
     ],
     products: [
-      { title: "Bisküviler", href: "/urunler?category=biskuvi" },
       { title: "Dolgulu Bisküviler", href: "/urunler?category=dolgulu-biskuvi" },
-      { title: "Kekler", href: "/urunler?category=kek" },
+      { title: "Sürme Kremalar", href: "/urunler?category=surme-krema" },
+      { title: "Reçeller", href: "/urunler?category=recel" },
     ]
   },
 
@@ -55,69 +55,7 @@ export const siteData: SiteData = {
 
   products: [
     // ═══════════════════════════════════════════════════════════════
-    // BACANO SERIES - Kremalı Bisküviler
-    // ═══════════════════════════════════════════════════════════════
-    {
-      id: "bacano-classic",
-      slug: "bacano-classic",
-      name: "Bacano Classic",
-      category: "biskuvi",
-      images: ["/images/products/bacano-classic.png", "/images/products/bacano-classic.png", "/images/products/bacano-classic.png", "/images/products/bacano-classic.png"],
-      description: "Kakao ve Süt Kremalı Bisküvi / Biscuit with Cocoa and Milk Cream",
-      weights: ["24 GR", "27 GR", "36 GR", "55 GR", "60 GR"],
-      packaging: "24x6",
-      boxInfo: "4500 Boxes (24gr), 4200 Boxes (27gr), 3500 Boxes (36gr), 2550 Boxes (55gr/60gr)",
-      isFeatured: true,
-      gridSpan: "wide"
-    },
-    {
-      id: "bacano-dark",
-      slug: "bacano-dark",
-      name: "Bacano Dark",
-      category: "biskuvi",
-      images: ["/images/products/bacano-dark.png", "/images/products/bacano-dark.png", "/images/products/bacano-dark.png", "/images/products/bacano-dark.png"],
-      description: "Kakao ve Süt Kremalı Bisküvi / Biscuit with Cocoa and Milk Cream",
-      weights: ["24 GR", "27 GR", "36 GR", "55 GR", "60 GR"],
-      packaging: "24x6",
-      boxInfo: "4500 Boxes (24gr), 4200 Boxes (27gr), 3500 Boxes (36gr), 2550 Boxes (55gr/60gr)"
-    },
-    {
-      id: "bacano-strawberry",
-      slug: "bacano-strawberry",
-      name: "Bacano Strawberry",
-      category: "biskuvi",
-      images: ["/images/products/bacano-strawberry.png", "/images/products/bacano-strawberry.png", "/images/products/bacano-strawberry.png", "/images/products/bacano-strawberry.png"],
-      description: "Kakao ve Çilek Kremalı Bisküvi / Biscuit with Cocoa and Strawberry Cream",
-      weights: ["24 GR", "27 GR", "36 GR", "55 GR", "60 GR"],
-      packaging: "24x6",
-      boxInfo: "4500 Boxes (24gr), 4200 Boxes (27gr), 3500 Boxes (36gr), 2550 Boxes (55gr/60gr)",
-      isFeatured: true
-    },
-    {
-      id: "bacano-banana",
-      slug: "bacano-banana",
-      name: "Bacano Banana",
-      category: "biskuvi",
-      images: ["/images/products/bacano-banana.png", "/images/products/bacano-banana.png", "/images/products/bacano-banana.png", "/images/products/bacano-banana.png"],
-      description: "Kakao ve Muz Kremalı Bisküvi / Biscuit with Cocoa and Banana Cream",
-      weights: ["24 GR", "27 GR", "36 GR", "55 GR", "60 GR"],
-      packaging: "24x6",
-      boxInfo: "4500 Boxes (24gr), 4200 Boxes (27gr), 3500 Boxes (36gr), 2550 Boxes (55gr/60gr)"
-    },
-    {
-      id: "bacano-coconut",
-      slug: "bacano-coconut",
-      name: "Bacano Coconut",
-      category: "biskuvi",
-      images: ["/images/products/bacano-coconut.png", "/images/products/bacano-coconut.png", "/images/products/bacano-coconut.png", "/images/products/bacano-coconut.png"],
-      description: "Kakao ve Hindistan Cevizi Kremalı Bisküvi / Biscuit with Cocoa and Coconut Cream",
-      weights: ["24 GR", "27 GR", "36 GR", "55 GR", "60 GR"],
-      packaging: "24x6",
-      boxInfo: "4500 Boxes (24gr), 4200 Boxes (27gr), 3500 Boxes (36gr), 2550 Boxes (55gr/60gr)"
-    },
-
-    // ═══════════════════════════════════════════════════════════════
-    // REGOSTO SERIES - Dolgulu Bisküviler (Cookies Filled with Cocoa Cream)
+    // REGOSTO SERIES - Dolgulu Bisküviler
     // ═══════════════════════════════════════════════════════════════
     {
       id: "regosto-classic",
@@ -130,7 +68,7 @@ export const siteData: SiteData = {
       packaging: "24x6",
       boxInfo: "4250 Boxes (28gr), 3200 Boxes (42gr), 2500 Boxes (56gr), 2100 Boxes (72gr)",
       isFeatured: true,
-      gridSpan: "tall"
+      gridSpan: "wide"
     },
     {
       id: "regosto-mosaic",
@@ -141,7 +79,8 @@ export const siteData: SiteData = {
       description: "Kakao Krema Dolgulu Bisküvi / Cookies Filled with Cocoa Cream",
       weights: ["28 GR", "42 GR", "56 GR", "72 GR"],
       packaging: "24x6",
-      boxInfo: "4250 Boxes (28gr), 3200 Boxes (42gr), 2500 Boxes (56gr), 2100 Boxes (72gr)"
+      boxInfo: "4250 Boxes (28gr), 3200 Boxes (42gr), 2500 Boxes (56gr), 2100 Boxes (72gr)",
+      isFeatured: true
     },
     {
       id: "regosto-dark",
@@ -167,93 +106,55 @@ export const siteData: SiteData = {
     },
 
     // ═══════════════════════════════════════════════════════════════
-    // TRILEX SERIES - Kremalı Kekler
+    // SÜRME KREMALAR - Cremora & Tahera
     // ═══════════════════════════════════════════════════════════════
     {
-      id: "trilex-vanilla",
-      slug: "trilex-vanilla",
-      name: "Trilex Vanilla",
-      category: "kek",
-      images: ["/images/products/trilex-vanilla.png", "/images/products/trilex-vanilla.png", "/images/products/trilex-vanilla.png", "/images/products/trilex-vanilla.png"],
-      description: "Vanilya Kremalı Kek / Cake Filled With Vanilla Sauce",
-      weights: ["35 GR", "40 GR"],
-      packaging: "24x6",
-      boxInfo: "2250 Boxes (35gr), 2000 Boxes (40gr)",
-      code: "TU32 / TU42",
+      id: "cremora",
+      slug: "cremora",
+      name: "Cremora",
+      category: "surme-krema",
+      images: ["/images/products/cremora.png", "/images/products/cremora.png", "/images/products/cremora.png", "/images/products/cremora.png"],
+      description: "Kakaolu Fındık Kreması / Chocolate Hazelnut Spread",
+      weights: ["350 GR"],
+      packaging: "12x1",
+      boxInfo: "12 Jars per Box",
       isFeatured: true,
-      gridSpan: "wide"
+      gridSpan: "tall"
     },
     {
-      id: "trilex-cocoa",
-      slug: "trilex-cocoa",
-      name: "Trilex Cocoa",
-      category: "kek",
-      images: ["/images/products/trilex-cocoa.png", "/images/products/trilex-cocoa.png", "/images/products/trilex-cocoa.png", "/images/products/trilex-cocoa.png"],
-      description: "Kakao Kremalı Kek / Cake Filled With Cocoa Sauce",
-      weights: ["35 GR", "40 GR"],
-      packaging: "24x6",
-      boxInfo: "2250 Boxes (35gr), 2000 Boxes (40gr)",
-      code: "TU31 / TU41"
-    },
-    {
-      id: "trilex-caramel",
-      slug: "trilex-caramel",
-      name: "Trilex Caramel",
-      category: "kek",
-      images: ["/images/products/trilex-caramel.png", "/images/products/trilex-caramel.png", "/images/products/trilex-caramel.png", "/images/products/trilex-caramel.png"],
-      description: "Karamel Kremalı Kek / Cake Filled With Caramel Sauce",
-      weights: ["35 GR", "40 GR"],
-      packaging: "24x6",
-      boxInfo: "2250 Boxes (35gr), 2000 Boxes (40gr)",
-      code: "TU33 / TU43"
-    },
-    {
-      id: "trilex-mosaic",
-      slug: "trilex-mosaic",
-      name: "Trilex Mosaic",
-      category: "kek",
-      images: ["/images/products/trilex-mosaic.png", "/images/products/trilex-mosaic.png", "/images/products/trilex-mosaic.png", "/images/products/trilex-mosaic.png"],
-      description: "Kakao Kremalı Kek / Cake Filled With Cocoa Sauce",
-      weights: ["35 GR", "40 GR"],
-      packaging: "24x6",
-      boxInfo: "2250 Boxes (35gr), 2000 Boxes (40gr)",
-      code: "TU34 / TU44"
+      id: "tahera",
+      slug: "tahera",
+      name: "Tahera",
+      category: "surme-krema",
+      images: ["/images/products/tahera.png", "/images/products/tahera.png", "/images/products/tahera.png", "/images/products/tahera.png"],
+      description: "Tahin Kreması / Tahini Cream",
+      weights: ["300 GR"],
+      packaging: "12x1",
+      boxInfo: "12 Jars per Box",
+      isFeatured: true
     },
 
     // ═══════════════════════════════════════════════════════════════
-    // STAR SERIES - Özel Kekler
+    // REÇELLER - Berriva
     // ═══════════════════════════════════════════════════════════════
     {
-      id: "star-bear",
-      slug: "star-bear",
-      name: "Star Bear",
-      category: "kek",
-      images: ["/images/products/star-bear.png", "/images/products/star-bear.png", "/images/products/star-bear.png", "/images/products/star-bear.png"],
-      description: "Kakao Kremalı Kek / Cake Filled With Cocoa Sauce",
-      weights: ["30 GR"],
-      packaging: "24x6",
-      boxInfo: "2250 Boxes",
-      code: "SB31",
+      id: "berriva",
+      slug: "berriva",
+      name: "Berriva",
+      category: "recel",
+      images: ["/images/products/berriva.png", "/images/products/berriva.png", "/images/products/berriva.png", "/images/products/berriva.png"],
+      description: "Çilek Reçeli %45 Meyve / Strawberry Jam %45 Fruit",
+      weights: ["380 GR"],
+      packaging: "12x1",
+      boxInfo: "12 Jars per Box",
       isFeatured: true
     },
-    {
-      id: "star-one",
-      slug: "star-one",
-      name: "Star One",
-      category: "kek",
-      images: ["/images/products/star-one.png", "/images/products/star-one.png", "/images/products/star-one.png", "/images/products/star-one.png"],
-      description: "Kakao Kremalı Kek / Cake Filled With Cocoa Sauce",
-      weights: ["30 GR"],
-      packaging: "24x6",
-      boxInfo: "1750 Boxes",
-      code: "SO31"
-    }
   ],
 
   categories: [
-    { id: "biskuvi", name: "Bisküviler (Bacano)" },
     { id: "dolgulu-biskuvi", name: "Dolgulu Bisküviler (Regosto)" },
-    { id: "kek", name: "Kekler (Trilex & Star)" },
+    { id: "surme-krema", name: "Sürme Kremalar (Cremora & Tahera)" },
+    { id: "recel", name: "Reçeller (Berriva)" },
   ],
 
   newsCategories: [
@@ -264,86 +165,92 @@ export const siteData: SiteData = {
 
   newsItems: [
     {
-      id: "gulfood-2026-dubai",
-      slug: "gulfood-2026-dubai",
-      title: "Gulfood 2026 Dubai",
-      category: "fuarlar",
-      summary: "Kalendos, dünyanın en büyük gıda fuarı Gulfood 2026'da yerini alıyor. Dubai World Trade Centre'da standımızı ziyaret edin.",
-      content: `Kalendos olarak, gıda sektörünün en prestijli etkinliklerinden biri olan Gulfood 2026 Fuarı'na katılmanın heyecanını yaşıyoruz.
-
-Dubai World Trade Centre'da gerçekleşecek bu uluslararası organizasyonda, tüm ürün yelpazemizi sergileyecek ve global iş ortaklarımızla bir araya geleceğiz.
-
-Standımızda Bacano, Regosto, Trilex ve Star serilerimizin tamamını deneyimleyebilir, yeni ürün çalışmalarımız hakkında bilgi alabilirsiniz.
-
-B2B ihracat fırsatları ve distribütörlük görüşmeleri için randevu almak isterseniz bizimle iletişime geçebilirsiniz.`,
-      image: "/images/products/bacano-classic.png",
-      date: "2026-02-17",
-      isFeatured: true,
-      fairDetails: {
-        startDate: "2026-02-17",
-        endDate: "2026-02-21",
-        location: "Dubai World Trade Centre",
-        city: "Dubai, BAE",
-        standNumber: "Hall 3, Stand B-142",
-      },
-    },
-    {
-      id: "5-uretim-hatti",
-      slug: "5-uretim-hatti",
-      title: "5. Üretim Hattımız Devreye Alındı",
-      category: "haberler",
-      summary: "Artan talebe karşılık olarak 5. üretim hattımızı devreye aldık. Yeni hattımız ile üretim kapasitemizi %25 artırdık.",
-      content: `Kalendos ailesi olarak, büyüyen ihracat hacmimiz ve artan müşteri taleplerine cevap verebilmek amacıyla 5. üretim hattımızı devreye almış bulunuyoruz.
-
-Son teknoloji ile donatılmış yeni üretim hattımız, özellikle dolgulu bisküvi kategorisinde üretim kapasitemizi %25 oranında artırmaktadır.
-
-Bu yatırım ile birlikte toplam üretim alanımız 10.000 m²'ye ulaşmış olup, Avrupa, Orta Doğu ve Afrika pazarlarındaki müşterilerimize daha hızlı ve verimli hizmet sunabilecek konuma gelmiş bulunmaktayız.
-
-Yeni hattımız, ISO 9001 ve HACCP standartlarına uygun olarak tasarlanmış olup, gıda güvenliği konusundaki titiz yaklaşımımızı sürdürmektedir.`,
-      image: "/images/products/regosto-classic.png",
-      date: "2026-01-15",
-      isFeatured: false,
-    },
-    {
-      id: "helal-sertifika-yenileme",
-      slug: "helal-sertifika-yenileme",
-      title: "Helal Sertifikamız Yenilendi",
+      id: "regosto-dolgulu-biskuvi",
+      slug: "regosto-dolgulu-biskuvi",
+      title: "Regosto – Dolgulu Bisküvi Serisi",
       category: "duyurular",
-      summary: "Uluslararası geçerliliğe sahip Helal sertifikamız başarıyla yenilenmiştir. Tüm ürünlerimiz helal üretim standartlarına uygundur.",
-      content: `Kalendos olarak, üretim süreçlerimizde helal gıda standartlarına olan bağlılığımızı bir kez daha teyit ettik.
+      summary: "Kalendos'un Regosto serisi, kakao krema dolgulu bisküvileriyle 4 farklı lezzette sunuluyor. Classic, Mosaic, Dark ve Espresso çeşitleriyle tanışın!",
+      content: `Regosto, Kalendos'un en sevilen dolgulu bisküvi markasıdır. Her bir bisküvinin içinde yoğun kakao kreması ile dolu, çıtır kabuğuyla damak zevkinize hitap eden eşsiz bir lezzet deneyimi sunar.
 
-Uluslararası akreditasyona sahip bağımsız denetim kuruluşu tarafından gerçekleştirilen kapsamlı denetim sonucunda, Helal sertifikamız başarıyla yenilenmiştir.
+Regosto Classic – Mavi ambalajıyla öne çıkan klasik lezzet. Çıtır bisküvi kabuğu içinde yoğun kakao kreması. Hem çocukların hem yetişkinlerin favorisi.
 
-Bu sertifika, hammaddeden son ürüne kadar tüm üretim süreçlerimizin helal gıda standartlarına uygun olduğunu belgeleyen uluslararası geçerliliğe sahip bir belgedir.
+Regosto Mosaic – Kırmızı ambalajıyla dikkat çeken Mosaic, kakao ve vanilya aromasının benzersiz uyumunu sunar. Mozaik desenli bisküvisiyle göze de hitap eder.
 
-Özellikle Orta Doğu ve Kuzey Afrika pazarlarındaki iş ortaklarımız için büyük önem taşıyan bu sertifika, Kalendos'un kalite ve güvenilirlik konusundaki kararlılığının bir göstergesidir.`,
-      image: "/images/products/trilex-vanilla.png",
-      date: "2026-01-08",
-      isFeatured: false,
+Regosto Dark – Altın sarısı ambalajıyla premium bir deneyim. Daha yoğun kakao içeriğiyle bitter çikolata severlerin tercihi. Yetişkin damak tadına özel.
+
+Regosto Espresso – Yeşil ambalajıyla farklılaşan Espresso, kahve aromalı kakao kremasıyla kahve tutkunlarına özel bir lezzet. Espresso notalarıyla zenginleştirilmiş eşsiz bir bisküvi deneyimi.
+
+Tüm Regosto çeşitleri 28gr, 42gr, 56gr ve 72gr gramaj seçenekleriyle sunulmaktadır. 24x6 paketleme formatında toptan siparişe uygundur.
+
+Distribütörlük ve ihracat fırsatları için bizimle iletişime geçin.
+📞 +90 (545) 230 32 44
+📧 info@benfel.com`,
+      image: "/images/products/regosto-classic.png",
+      date: "2026-02-16",
+      isFeatured: true,
     },
     {
-      id: "ism-koln-2026",
-      slug: "ism-koln-2026",
-      title: "ISM Köln 2026",
-      category: "fuarlar",
-      summary: "Dünyanın en büyük şekerleme ve atıştırmalık fuarı ISM Köln 2026'da Kalendos olarak yerimizi alıyoruz.",
-      content: `Kalendos, dünyanın en büyük şekerleme ve atıştırmalık fuarı olan ISM Köln 2026'ya katılıyor.
+      id: "cremora-findik-kremasi",
+      slug: "cremora-findik-kremasi",
+      title: "Cremora – Kakaolu Fındık Kreması",
+      category: "duyurular",
+      summary: "Kahvaltılarınızın yıldızı Cremora! %13 fındık içeriğiyle hazırlanan kakaolu fındık kreması, 350gr cam kavanozda şimdi satışta.",
+      content: `Cremora, Kalendos'un gururu olan kakaolu fındık kremasıdır. Her kaşığında fındığın doğal lezzetini kakaoyla buluşturan Cremora, kahvaltı sofralarınızın vazgeçilmezi olmaya aday.
 
-Almanya'nın Köln şehrinde gerçekleşecek bu uluslararası fuarda, Avrupa pazarına yönelik ürünlerimizi sergileyeceğiz.
+%13 gerçek fındık içeriğiyle üretilen Cremora, rakiplerinden fındık oranıyla ayrılır. Kremsi dokusu ve yoğun çikolata aroması, hem ekmek üstünde hem de tatlı tariflerinde mükemmel uyum sağlar.
 
-ISM fuarı, dünya genelinden 1.700'den fazla katılımcı ve 30.000'den fazla ziyaretçiyi ağırlayan sektörün en önemli buluşma noktasıdır.
+350gr cam kavanozda sunulan Cremora, hem şık ambalajıyla raflarda dikkat çeker hem de pratik kapağıyla kullanım kolaylığı sunar. Cam kavanozu sayesinde ürünün tazeliği ve kalitesi korunur.
 
-Standımızda özellikle Avrupa pazarı için geliştirdiğimiz yeni ambalaj tasarımlarımızı ve premium ürün serilerimizi tanıtacağız. Distribütörlük ve iş birliği fırsatları için standımıza bekliyoruz.`,
-      image: "/images/products/star-bear.png",
-      date: "2026-04-06",
+Üretimde kullanılan tüm hammaddeler özenle seçilmekte, uluslararası gıda güvenliği standartlarına uygun olarak işlenmektedir. Koruyucu içermez, doğal lezzet garantisi sunar.
+
+Toptan sipariş için 12'li koli halinde temin edilebilir. İhracat ve distribütörlük görüşmeleri için bizimle iletişime geçin.
+📞 +90 (545) 230 32 44
+📧 info@benfel.com`,
+      image: "/images/products/cremora.png",
+      date: "2026-02-15",
       isFeatured: true,
-      fairDetails: {
-        startDate: "2026-04-06",
-        endDate: "2026-04-09",
-        location: "Koelnmesse",
-        city: "Köln, Almanya",
-        standNumber: "Hall 10.2, Stand D-058",
-      },
+    },
+    {
+      id: "tahera-tahin-kremasi",
+      slug: "tahera-tahin-kremasi",
+      title: "Tahera – Tahin Kreması",
+      category: "duyurular",
+      summary: "Doğal lezzet, modern sunum! Tahera tahin kreması, geleneksel tahinin yenilikçi yorumuyla 300gr cam kavanozda satışta.",
+      content: `Tahera, Kalendos'un geleneksel tahini modern bir sunumla buluşturduğu premium tahin kremasıdır. Doğal susam tohumlarından elde edilen tahin, özel üretim teknikleriyle pürüzsüz ve kremsi bir kıvama kavuşturulmuştur.
+
+Doğal Lezzet mührü taşıyan Tahera, yapay tatlandırıcı ve koruyucu içermez. Susam tohumlarının doğal yağlarıyla zenginleşen yapısı, hem besleyici hem lezzetli bir kahvaltılık alternatifi sunar.
+
+300gr cam kavanozda sunulan Tahera, altın kapağı ve zarif etiket tasarımıyla raflarda premium konumlanır. Özellikle Orta Doğu, Kuzey Afrika ve Avrupa pazarlarında yüksek talep görmektedir.
+
+Tahera, pekmezle karıştırılarak geleneksel tahin-pekmez olarak tüketilebileceği gibi, tatlı tariflerinde, smoothie'lerde ve salata soslarında da kullanılabilir. Çok yönlü bir mutfak ürünüdür.
+
+Toptan sipariş için 12'li koli halinde temin edilebilir. İhracat ve distribütörlük görüşmeleri için bizimle iletişime geçin.
+📞 +90 (545) 230 32 44
+📧 info@benfel.com`,
+      image: "/images/products/tahera.png",
+      date: "2026-02-14",
+      isFeatured: true,
+    },
+    {
+      id: "berriva-cilek-receli",
+      slug: "berriva-cilek-receli",
+      title: "Berriva – Çilek Reçeli",
+      category: "duyurular",
+      summary: "%45 meyve içeriğiyle hazırlanan Berriva çilek reçeli, doğal ve taze lezzetiyle kahvaltı sofralarınızı tatlandırır!",
+      content: `Berriva, Kalendos'un %45 gerçek meyve içeriğiyle ürettiği premium çilek reçelidir. Taze çileklerin doğal lezzeti, özel pişirme teknikleriyle korunarak kavanoza aktarılır.
+
+%45 meyve oranı, Berriva'yı piyasadaki birçok reçelden ayıran en önemli özelliğidir. Yüksek meyve içeriği sayesinde yoğun çilek aroması ve doğal renk elde edilir. Yapay renklendirici kullanılmaz.
+
+380gr cam kavanozda sunulan Berriva, kahvaltı sofralarının vazgeçilmezi olmaya adaydır. Taze ekmeğin üzerine sürülerek, yoğurtla karıştırılarak veya pasta ve tatlı tariflerinde kullanılabilir.
+
+Berriva'nın şık ve modern ambalaj tasarımı, hem yerel hem uluslararası pazarlarda tüketicinin dikkatini çeker. Kırmızı tonlarındaki etiketi, çileğin tazeliğini ve doğallığını yansıtır.
+
+Toptan sipariş için 12'li koli halinde temin edilebilir. İhracat ve distribütörlük görüşmeleri için bizimle iletişime geçin.
+📞 +90 (545) 230 32 44
+📧 info@benfel.com`,
+      image: "/images/products/berriva.png",
+      date: "2026-02-13",
+      isFeatured: true,
     },
   ],
 };

@@ -45,10 +45,18 @@ export function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_KEY",
+          from_name: "Kalendos Website",
+          subject: `Kalendos İletişim: ${data.subject}`,
+          name: data.name,
+          email: data.email,
+          phone: data.phone || "-",
+          message: data.message,
+        }),
       });
 
       const result = await response.json();
@@ -60,7 +68,7 @@ export function ContactForm() {
         reset();
       } else {
         toast.error(t.contact.form.errorTitle, {
-          description: result.message || t.contact.form.errorDesc,
+          description: t.contact.form.errorDesc,
         });
       }
     } catch {
