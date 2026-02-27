@@ -12,27 +12,43 @@ import { siteData } from "@/lib/siteData";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kalendos.vercel.app"),
+  metadataBase: new URL("https://www.kalendossnacks.com"),
   title: {
     template: "%s | Kalendos",
     default: `${siteData.companyName} | ${siteData.tagline}`,
   },
   description: siteData.description,
-  keywords: ["dolgulu bisküvi", "sürme krema", "reçel", "tahini", "kalendos", "gıda üreticisi", "regosto", "cremora", "tahera", "berriva"],
+  keywords: [
+    "kalendos", "kalendossnacks", "Kalendos Snacks", "kalends snacks",
+    "bisküvi", "gofret", "çikolata", "kek", "wafer",
+    "dolgulu bisküvi", "sürme krema", "reçel", "tahini",
+    "gıda üreticisi", "gıda ihracatı", "snack üreticisi",
+    "regosto", "cremora", "tahera", "berriva", "bacano", "trilex",
+    "istanbul gıda", "türk gıda markası",
+  ],
   authors: [{ name: "Kalendos" }],
   creator: "Kalendos",
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://kalendos.vercel.app",
-    siteName: "Kalendos",
+    url: "https://www.kalendossnacks.com",
+    siteName: "Kalendos Snacks",
     title: `${siteData.companyName} | ${siteData.tagline}`,
     description: siteData.description,
+    images: [
+      {
+        url: "https://www.kalendossnacks.com/images/logo.png",
+        width: 800,
+        height: 600,
+        alt: "Kalendos Snacks Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteData.companyName} | ${siteData.tagline}`,
     description: siteData.description,
+    images: ["https://www.kalendossnacks.com/images/logo.png"],
   },
   icons: {
     icon: "/images/logo.png",

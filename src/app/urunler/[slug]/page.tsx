@@ -21,11 +21,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${product.name} | Kalendos Ürünleri`,
-    description: `${product.name} - ${product.description}. Kalendos kalitesiyle.`,
+    title: `${product.name} | Kalendos Snacks`,
+    description: `${product.name} - ${product.description}. Kalendos Snacks kalitesiyle üretilmiştir.`,
+    keywords: ["kalendossnacks", "kalendos ürünleri", product.name, product.category],
     openGraph: {
-      title: `${product.name} | Kalendos`,
+      title: `${product.name} | Kalendos Snacks`,
       description: product.description,
+      images: product.images[0]
+        ? [{ url: `https://www.kalendossnacks.com${product.images[0]}`, alt: product.name }]
+        : [{ url: "https://www.kalendossnacks.com/images/logo.png", alt: "Kalendos Snacks" }],
     },
   };
 }

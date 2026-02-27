@@ -8,13 +8,22 @@ import { Play, RotateCcw, Trophy, Star, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const SNACKS = [
-  { id: "regosto-classic", name: "Regosto Classic", slug: "regosto-classic", image: "/images/products/regosto-classic.png", points: 10 },
-  { id: "regosto-mosaic", name: "Regosto Mosaic", slug: "regosto-mosaic", image: "/images/products/regosto-mosaic.png", points: 10 },
-  { id: "regosto-dark", name: "Regosto Dark", slug: "regosto-dark", image: "/images/products/regosto-dark.png", points: 15 },
-  { id: "regosto-espresso", name: "Regosto Espresso", slug: "regosto-espresso", image: "/images/products/regosto-espresso.png", points: 15 },
-  { id: "cremora", name: "Cremora", slug: "cremora", image: "/images/products/cremora.png", points: 20 },
-  { id: "tahera", name: "Tahera", slug: "tahera", image: "/images/products/tahera.png", points: 20 },
-  { id: "berriva", name: "Berriva", slug: "berriva", image: "/images/products/berriva.png", points: 25 },
+  { id: "krevia-classic",   name: "Krevia Classic",      slug: "krevia-classic",      image: "/images/products/krevia_classic.png",      points: 10 },
+  { id: "krevia-mosaic",    name: "Krevia Mosaic",       slug: "krevia-mosaic",       image: "/images/products/krevia_mosaic.png",       points: 10 },
+  { id: "krevia-dark",      name: "Krevia Dark",         slug: "krevia-dark",         image: "/images/products/krevia_dark.png",         points: 15 },
+  { id: "krevia-espresso",  name: "Krevia Espresso",     slug: "krevia-espresso",     image: "/images/products/krevia_espresso.png",     points: 15 },
+  { id: "tilento-cocoa",    name: "Tilento Cocoa",       slug: "tilento-cocoa",       image: "/images/products/tilento_cocoa.png",       points: 10 },
+  { id: "tilento-vanilla",  name: "Tilento Vanilla",     slug: "tilento-vanilla",     image: "/images/products/tilento_vanilla.png",     points: 10 },
+  { id: "veloria-cocoa",    name: "Veloria Cocoa",       slug: "veloria-cocoa",       image: "/images/products/veloria_cocoa.png",       points: 15 },
+  { id: "veloria-dark",     name: "Veloria Dark",        slug: "veloria-dark",        image: "/images/products/veloria_dark.png",        points: 15 },
+  { id: "veloria-vanilla",  name: "Veloria Vanilla",     slug: "veloria-vanilla",     image: "/images/products/veloria_vanilla.png",     points: 15 },
+  { id: "veloria-cocoa2",   name: "Veloria Cocoa 2",     slug: "veloria-cocoa2",      image: "/images/products/veloria_cocoa2.png",      points: 15 },
+  { id: "veloria-coconut",  name: "Veloria Coconut",     slug: "veloria-coconut",     image: "/images/products/veloria_coconut.png",     points: 20 },
+  { id: "veloria-dark2",    name: "Veloria Dark 2",      slug: "veloria-dark2",       image: "/images/products/veloria_dark2.png",       points: 20 },
+  { id: "veloria-whitecocoa", name: "Veloria White Cocoa", slug: "veloria-whitecocoa", image: "/images/products/veloria_whitecocoa.png", points: 20 },
+  { id: "cremora",          name: "Cremora",             slug: "cremora",             image: "/images/products/cremora.png",             points: 25 },
+  { id: "tahera",           name: "Tahera",              slug: "tahera",              image: "/images/products/tahera.png",              points: 25 },
+  { id: "berriva",          name: "Berriva",             slug: "berriva",             image: "/images/products/berriva.png",             points: 30 },
 ];
 
 // Score milestone messages

@@ -5,13 +5,28 @@ export function generateOrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Kalendos",
-    url: "https://kalendos.vercel.app",
-    logo: "https://kalendos.vercel.app/images/logo.png",
+    alternateName: ["Kalendos Snacks", "kalendossnacks"],
+    url: "https://www.kalendossnacks.com",
+    logo: "https://www.kalendossnacks.com/images/logo.png",
     description:
-      "Türkiye'nin premium gofret, bisküvi ve kek üreticisi.",
+      "Kalendos Snacks - Türkiye'nin premium gofret, bisküvi ve kek üreticisi. Bisküvi, gofret, çikolata ve kek ihracatında lider firma.",
+    sameAs: [
+      "https://www.instagram.com/benfelturkey",
+      "https://www.facebook.com/benfelturkey",
+      "https://www.linkedin.com/company/benfel",
+    ],
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Yakuplu Mah. Geçit Sok. No: 15",
+      addressLocality: "Beylikdüzü",
+      addressRegion: "İstanbul",
       addressCountry: "TR",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+90-533-513-65-63",
+      contactType: "sales",
+      email: "export@kalendossnacks.com",
     },
   };
 }
@@ -22,7 +37,7 @@ export function generateProductSchema(product: Product) {
     "@type": "Product",
     name: product.name,
     description: product.description,
-    image: `https://kalendos.vercel.app${product.images[0]}`,
+    image: `https://www.kalendossnacks.com${product.images[0]}`,
     brand: {
       "@type": "Brand",
       name: "Kalendos",
@@ -37,7 +52,7 @@ export function generateNewsArticleSchema(newsItem: NewsItem) {
     "@type": "NewsArticle",
     headline: newsItem.title,
     description: newsItem.summary,
-    image: `https://kalendos.vercel.app${newsItem.image}`,
+    image: `https://www.kalendossnacks.com${newsItem.image}`,
     datePublished: newsItem.date,
     author: {
       "@type": "Organization",
@@ -48,7 +63,7 @@ export function generateNewsArticleSchema(newsItem: NewsItem) {
       name: "Kalendos",
       logo: {
         "@type": "ImageObject",
-        url: "https://kalendos.vercel.app/images/logo.png",
+        url: "https://www.kalendossnacks.com/images/logo.png",
       },
     },
   };
@@ -58,11 +73,18 @@ export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Kalendos",
-    description:
-      "Premium gofret, bisküvi ve kek üreticisi.",
+    name: "Kalendos Snacks",
+    alternateName: "Kalendos",
+    url: "https://www.kalendossnacks.com",
+    logo: "https://www.kalendossnacks.com/images/logo.png",
+    description: "Kalendos Snacks - Premium gofret, bisküvi ve kek üreticisi. İhracat ve toptan satış.",
+    telephone: "+90-533-513-65-63",
+    email: "export@kalendossnacks.com",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Yakuplu Mah. Geçit Sok. No: 15",
+      addressLocality: "Beylikdüzü",
+      addressRegion: "İstanbul",
       addressCountry: "TR",
     },
   };

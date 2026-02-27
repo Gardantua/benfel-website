@@ -12,13 +12,6 @@ const localeNames: Record<Locale, string> = {
   ar: "AR",
 };
 
-const localeFlags: Record<Locale, string> = {
-  tr: "🇹🇷",
-  en: "🇬🇧",
-  es: "🇪🇸",
-  ar: "🇸🇦",
-};
-
 export function LanguageSwitcher() {
   const { locale, setLocale } = useLanguage();
 
@@ -43,9 +36,8 @@ export function LanguageSwitcher() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             />
           )}
-          <span className="relative z-10 flex items-center gap-1 sm:gap-1.5">
-            <span className="text-base sm:text-sm">{localeFlags[loc]}</span>
-            <span className="hidden sm:inline">{localeNames[loc]}</span>
+          <span className="relative z-10">
+            {localeNames[loc]}
           </span>
         </motion.button>
       ))}

@@ -5,6 +5,8 @@ export interface NavItem {
 
 export type ProductCategory =
   | "dolgulu-biskuvi"
+  | "gofret"
+  | "kremali-biskuvi"
   | "surme-krema"
   | "recel";
 

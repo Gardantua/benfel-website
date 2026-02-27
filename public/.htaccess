@@ -1,0 +1,75 @@
+Options -MultiViews
+Options +FollowSymLinks
+DirectoryIndex index.html
+RewriteEngine On
+
+# 1. Önce HTTP → HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# 2. Sonra non-www → www (sadece HTTPS'den gelenlere)
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# MIME Types - CSS/JS/Font dosyalarını doğru içerik tipiyle sun
+AddType text/css .css
+AddType application/javascript .js
+AddType application/json .json
+AddType image/svg+xml .svg
+AddType image/webp .webp
+AddType font/woff .woff
+AddType font/woff2 .woff2
+AddType application/font-woff .woff
+AddType application/font-woff2 .woff2
+
+# Tüm statik dosyalara erişim izni (Apache 2.2 + 2.4 uyumlu)
+<FilesMatch "\.(css|js|json|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|webp|mp4|pdf|map)$">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Allow from all
+    </IfModule>
+</FilesMatch>
+
+# _next klasörüne tam erişim
+<IfModule mod_authz_core.c>
+    <Directory "_next">
+        Require all granted
+    </Directory>
+</IfModule>
+
+# X-Content-Type-Options: CSS/JS'nin MIME sniff'ten korunması için kaldır
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css)$">
+        Header set Content-Type "text/css"
+        Header unset X-Content-Type-Options
+    </FilesMatch>
+    <FilesMatch "\.(js)$">
+        Header set Content-Type "application/javascript"
+        Header unset X-Content-Type-Options
+    </FilesMatch>
+</IfModule>
+
+# Cache - statik dosyalar için
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# Mevcut dosya/klasörse direkt sun
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# HTML uzantısız URL'ler için
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Bulunamayan sayfalar için 404
+ErrorDocument 404 /404.html

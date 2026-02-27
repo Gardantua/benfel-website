@@ -3,7 +3,6 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { BrandsShowcase } from "@/components/home/BrandsShowcase";
 import { BentoShowcase } from "@/components/home/BentoShowcase";
 import { VideoSection } from "@/components/home/VideoSection";
-import { AboutTeaser } from "@/components/home/AboutTeaser";
 import { CertificationsStrip } from "@/components/home/CertificationsStrip";
 import { LatestNews } from "@/components/home/LatestNews";
 import { Newsletter } from "@/components/home/Newsletter";
@@ -25,7 +24,6 @@ export default function HomePage() {
       <BrandsShowcase />
       <BentoShowcase />
       <VideoSection />
-      <AboutTeaser />
       <CertificationsStrip />
       <LatestNews />
       <Newsletter />
