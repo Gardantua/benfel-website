@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, X, Pause } from "lucide-react";
+import { Play, X } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { useLanguage } from "@/context/LanguageContext";

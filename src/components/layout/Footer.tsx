@@ -75,7 +75,7 @@ export function Footer() {
                 return (
                   <Link
                     key={cat.id}
-                    href={`/urunler?kategori=${cat.id}`}
+                    href={`/urunler?category=${cat.id}`}
                     className="text-sm text-primary-foreground/60 hover:text-accent transition-colors"
                   >
                     {t.categories[key] ?? cat.name}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
@@ -20,7 +20,7 @@ const bannerSlides = [
 export function HeroSection() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const autoplayRef = useRef(
+  const [autoplay] = useState(() =>
     Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
@@ -28,17 +28,17 @@ export function HeroSection() {
     if (!api) return;
 
     setCurrent(api.selectedScrollSnap());
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
+    const onSelect = () => setCurrent(api.selectedScrollSnap());
+    api.on("select", onSelect);
+    return () => { api.off("select", onSelect); };
   }, [api]);
 
   const restartAutoplay = useCallback(() => {
     const timer = setTimeout(() => {
-      autoplayRef.current.play();
+      autoplay.play();
     }, 3000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [autoplay]);
 
   const scrollPrev = useCallback(() => {
     api?.scrollPrev();
@@ -63,7 +63,7 @@ export function HeroSection() {
       <Carousel
         setApi={setApi}
         opts={{ loop: true, align: "start" }}
-        plugins={[autoplayRef.current]}
+        plugins={[autoplay]}
         className="w-full"
       >
         <CarouselContent className="-ml-0">

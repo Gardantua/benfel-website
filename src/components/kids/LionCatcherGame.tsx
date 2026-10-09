@@ -72,7 +72,6 @@ export function LionCatcherGame() {
   const [showCatch, setShowCatch] = useState<{ x: number; points: number } | null>(null);
   const [stamina, setStamina] = useState(MAX_STAMINA);
   const [milestoneMsg, setMilestoneMsg] = useState<{ message: string; emoji: string } | null>(null);
-  const [shownMilestones, setShownMilestones] = useState<Set<number>>(new Set());
 
   const gameAreaRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>(0);
@@ -107,7 +106,6 @@ export function LionCatcherGame() {
     for (const m of MILESTONES) {
       if (score >= m.score && !shownMilestonesRef.current.has(m.score)) {
         shownMilestonesRef.current.add(m.score);
-        setShownMilestones(new Set(shownMilestonesRef.current));
         setMilestoneMsg(m);
         setTimeout(() => setMilestoneMsg(null), 2000);
         break;
@@ -180,7 +178,7 @@ export function LionCatcherGame() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  const gameLoop = useCallback((timestamp: number) => {
+  const gameLoop = useCallback(function tick(timestamp: number) {
     if (gameStateRef.current !== "playing") return;
 
     const gameArea = gameAreaRef.current;
@@ -277,7 +275,7 @@ export function LionCatcherGame() {
 
     snacksRef.current = updatedSnacks;
     setFallingSnacks([...updatedSnacks]);
-    animationRef.current = requestAnimationFrame(gameLoop);
+    animationRef.current = requestAnimationFrame(tick);
   }, []);
 
   const startGame = useCallback(() => {
@@ -296,7 +294,6 @@ export function LionCatcherGame() {
     setStamina(MAX_STAMINA);
     setMilestoneMsg(null);
     shownMilestonesRef.current = new Set();
-    setShownMilestones(new Set());
     setGameState("playing");
     animationRef.current = requestAnimationFrame(gameLoop);
   }, [gameLoop]);
