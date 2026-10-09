@@ -1,83 +1,25 @@
-# Benfel - Corporate Website
+# Kalendos / Benfel şirket sitesi
 
-Premium food company website for **Benfel** - a B2B biscuit, cookie, and cake manufacturer based in Istanbul, Turkey.
+Benfel'in ürünlerini ve Kalendos markasını tanıtmak için hazırladığım şirket sitesi. Ürün kataloğunu, ürün detaylarını ve iletişim akışını farklı ekran boyutlarında kullanılabilir hale getirmeye odaklandım.
 
-**Live:** [kalendos.vercel.app](https://kalendos.vercel.app)
+**Canlı site:** [kalendossnacks.com](https://kalendossnacks.com)
 
-## Tech Stack
+## Kapsam
 
-- **Framework:** Next.js 16 (App Router, Turbopack)
-- **Language:** TypeScript (strict)
-- **Styling:** Tailwind CSS v4, Shadcn/ui (New York)
-- **Animations:** Framer Motion
-- **Forms:** React Hook Form + Zod validation
-- **Carousel:** Embla Carousel (via Shadcn)
-- **Icons:** Lucide React
-- **Notifications:** Sonner
+- Türkçe, İngilizce, İspanyolca ve Arapça dil seçimi.
+- Kategori filtreli ürün listesi ve ürün detay sayfaları.
+- İletişim formu, WhatsApp bağlantısı ve firma bilgileri.
+- SEO metadata, sitemap ve yapılandırılmış veri.
 
-## Features
+Next.js, TypeScript, React ve Tailwind CSS kullandım. Form doğrulaması React Hook Form/Zod; animasyonlar Framer Motion ile.
 
-- Multi-language support (TR, EN, ES, AR) with client-side switching
-- Full-width hero banner carousel with autoplay
-- Product catalog with category filtering
-- Product image gallery with hover scrubbing (desktop) and thumbnail navigation
-- Responsive design optimized for mobile, tablet, and desktop
-- SEO metadata, sitemap, structured data (Schema.org)
-- Contact form with validation
-- WhatsApp integration
-
-## Pages
-
-| Route | Description |
-|-------|-------------|
-| `/` | Homepage - hero carousel, featured products, stats, brands |
-| `/hakkimizda` | About - company story, timeline, mission/vision |
-| `/urunler` | Products - filterable product grid |
-| `/urunler/[slug]` | Product detail - image gallery, specifications |
-| `/iletisim` | Contact - form, map, company info |
-
-## Product Lines
-
-- **Bacano** - Cream biscuits (Classic, Dark, Strawberry, Banana, Coconut)
-- **Regosto** - Filled cookies (Classic, Mosaic, Dark, Espresso)
-- **Trilex** - Cream cakes (Vanilla, Cocoa, Caramel, Mosaic)
-- **Star** - Special cakes (Bear, One)
-
-## Getting Started
+## Yerelde çalıştırma
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Node.js 22 ile `http://localhost:3000` adresinde açılır. `npm run build` üretim derlemesini, `npm run lint` kaynak kontrollerini çalıştırır. Canlı dağıtım bu repo düzenleme çalışmasının dışında tutulur.
 
-## Build
-
-```bash
-npm run build
-```
-
-## Deploy
-
-```bash
-npx vercel deploy --yes --prod
-```
-
-## Project Structure
-
-```
-src/
-  app/           # Pages and API routes
-  components/
-    home/        # Homepage sections
-    layout/      # Header, Footer, Logo, MobileNav
-    products/    # Product card, grid, detail, filter
-    about/       # About page sections
-    contact/     # Contact form and info
-    shared/      # Reusable components
-    ui/          # Shadcn/ui components
-  lib/           # Data, types, utils, i18n, animations
-  context/       # Language context provider
-  hooks/         # Custom hooks
-```
+`src/app` sayfaları, `src/components` arayüz bileşenlerini, `src/lib` ürün/dil verilerini içerir. Bu repo özel tutuluyor; şirket dosyaları herkese açık portföy deposuna aktarılmıyor.
